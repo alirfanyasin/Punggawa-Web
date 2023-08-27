@@ -25,10 +25,38 @@ Merupakan sebuah website dari organisasi punggawa IT Telkom Surabaya
 - Sebelum melakukan push, wajib melakukan pull terlebih dahulu ke branch `main` dan merge ke branch yang telah di buat, lalu pull request
 
 
-# Usage
-Lakukan clone pada repository ini dengan menulis perintah 
+## Instalation
+Clone Repository
 ```sh
 git clone git@github.com:alirfanyasin/Punggawa-Web.git
+```
+Tulis perintah dibawah in untuk menginstal depedensi yang di perlukan 
+```sh
+composer install
+```
+dan
+```sh
+npm install
+```
+
+Lalu copy file .env 
+```sh
+cp .env.example .env
+```
+
+Setelah itu lakukan generate key
+```sh
+php artisan key:generate
+```
+
+## Running Project
+```sh
+php artisan serve
+```
+
+jika ingin menjalan kan vitenya
+```sh
+npm run dev
 ```
 
 
