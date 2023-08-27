@@ -13,7 +13,7 @@
 - Mengikuti template yang telah dibuat
 - Sertakan comment di setiap section contohnya :
 ```php
-{{-- Header start --}}
+{{-- Header start --}} // ini adalah comment di laravel
         <h1 class="text-3xl text-red-900 font-bold underline">
             Hello world!
         </h1>
