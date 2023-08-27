@@ -21,8 +21,8 @@ Merupakan sebuah website dari organisasi punggawa IT Telkom Surabaya
   * **refactor** : Perubahan kode yang tidak memperbaiki bug atau menambahkan fitur
   * **style** : Perubahan yang tidak mempengaruhi arti kode (spasi putih, format, titik koma hilang, dll)
   * **tes** : Menambahkan tes yang hilang atau memperbaiki tes yang ada
-- Sebelum melakukan push wajib membuat branch baru sesuai fitur yang di kerjakan contoh `feature/login` dilarang langsung push ke branch `main`
-- Sebelum melakukan push wajib pull terlebih dahulu ke branch `main` dan merge ke branch yang telah di buat lalu pull request
+- Sebelum melakukan push, wajib membuat branch baru sesuai dengan fitur yang di kerjakan contohnya `feature/login` dan dilarang push ke branch `main`
+- Sebelum melakukan push, wajib melakukan pull terlebih dahulu ke branch `main` dan merge ke branch yang telah di buat, lalu pull request
 
 
 ## License
