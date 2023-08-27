@@ -28,7 +28,7 @@ Merupakan sebuah website dari organisasi punggawa IT Telkom Surabaya
 # Usage
 Lakukan clone pada repository ini dengan menulis perintah 
 ```sh
-git clone 
+git clone git@github.com:alirfanyasin/Punggawa-Web.git
 ```
 
 
