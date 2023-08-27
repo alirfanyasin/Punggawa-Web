@@ -25,6 +25,13 @@ Merupakan sebuah website dari organisasi punggawa IT Telkom Surabaya
 - Sebelum melakukan push, wajib melakukan pull terlebih dahulu ke branch `main` dan merge ke branch yang telah di buat, lalu pull request
 
 
+# Usage
+Lakukan clone pada repository ini dengan menulis perintah 
+```sh
+git clone 
+```
+
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
