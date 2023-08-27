@@ -52,10 +52,7 @@ php artisan key:generate
 ## Running Project
 ```sh
 php artisan serve
-```
 
-jika ingin menjalan kan vitenya
-```sh
 npm run dev
 ```
 
