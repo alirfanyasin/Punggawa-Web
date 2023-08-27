@@ -13,11 +13,17 @@ Merupakan sebuah website dari organisasi punggawa IT Telkom Surabaya
 ```
 - Pesan commit harus jelas, contoh aturan penulisan commit:
   * **build** : Perubahan yang memengaruhi sistem build atau dependensi eksternal (contoh cakupan: gulp, brokoli, npm)
-- dsa
+  * **ci** : Perubahan pada file dan skrip konfigurasi CI kami (contoh cakupan: Circle, BrowserStack, SauceLabs)
+  * **docs** : Perubahan documentasi
+  * **feat** : Membuat fitur baru
+  * **fix** : Memperbaiki bug
+  * **perf** : Perubahan kode yang meningkatkan kinerja
+  * **refactor** : Perubahan kode yang tidak memperbaiki bug atau menambahkan fitur
+  * **style** : Perubahan yang tidak mempengaruhi arti kode (spasi putih, format, titik koma hilang, dll)
+  * **tes** : Menambahkan tes yang hilang atau memperbaiki tes yang ada
+- Sebelum melakukan push wajib membuat branch baru sesuai fitur yang di kerjakan contoh `feature/login` dilarang langsung push ke branch `main`
+- Sebelum melakukan push wajib pull terlebih dahulu ke branch `main` dan merge ke branch yang telah di buat lalu pull request
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
 ## License
 
