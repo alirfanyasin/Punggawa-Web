@@ -33,9 +33,7 @@ git clone git@github.com:alirfanyasin/Punggawa-Web.git
 Tulis perintah dibawah in untuk menginstal depedensi yang di perlukan 
 ```sh
 composer install
-```
-dan
-```sh
+
 npm install
 ```
 
