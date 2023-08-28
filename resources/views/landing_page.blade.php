@@ -1,5 +1,7 @@
 @extends('layouts.app')
-@section('title', env('APP_NAME') . '- Pusat informasi dan pengelolaan lomba di bidang akademik dan non-akademik
+@section('title',
+  env('APP_NAME') .
+  '- Pusat informasi dan pengelolaan lomba di bidang akademik dan non-akademik
   Institut Teknologi Telkom Surabaya')
 @section('content')
   <!-- Jumbotron start -->
@@ -14,7 +16,8 @@
           <p class="mt-10 text-[#E9E9E9] text-xl">Pusat informasi dan pengelolaan lomba di bidang akademik dan non-akademik
             Institut Teknologi Telkom Surabaya</p>
 
-          <a href="#" class="inline-block px-7 py-3 mt-10 rounded-lg bg-white text-[#15616D] shadow-lg">Lihat
+          <a href="#"
+            class="inline-block px-7 py-3 mt-10 rounded-lg bg-white hover:bg-slate-300 text-[#15616D] shadow-lg">Lihat
             Lomba</a>
         </div>
         <div class="w-6/12 mx-auto tagline">
