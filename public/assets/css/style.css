@@ -1,0 +1,4 @@
+#jumbotron-section:has(.flex) {
+  background: url('../image/bg-jumbotron-lp.png') no-repeat center;
+  background-size: cover;
+}
