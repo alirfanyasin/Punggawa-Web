@@ -1,7 +1,7 @@
 {{-- Footer start --}}
 <footer class="w-full py-10 bg-[#2C717C]">
   <div class="max-w-screen-xl mx-auto">
-    <div class="grid items-center grid-cols-3 gap-4">
+    <div class="grid grid-cols-3 gap-4">
       <div>
         <img src="{{ asset('assets/image/logo/Logo_Institut_Teknologi_Telkom_Surabaya_white.svg') }}" alt="">
         <h2 class="my-5 text-4xl font-semibold text-white">Punggawa <span class="text-[#FFB902]">Inspiratif</span></h2>
