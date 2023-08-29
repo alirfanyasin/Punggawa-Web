@@ -2,3 +2,37 @@
   background: url('../image/bg-jumbotron-lp.png') no-repeat center;
   background-size: cover;
 }
+
+#faq-section {
+  background: url('../image/bg3-jumbotron-lp.png') no-repeat top;
+  background-size: cover;
+}
+
+@keyframes move_wave {
+  0% {
+      transform: translateX(0) translateZ(0) scaleY(1)
+  }
+  25% {
+      transform: translateX(-25%) translateZ(0) scaleY(0.9)
+  }
+  50% {
+      transform: translateX(-50%) translateZ(0) scaleY(0.5)
+  }
+  75% {
+    transform: translateX(-75%) translateZ(0) scaleY(0.4)
+  }
+  100% {
+      transform: translateX(-100%) translateZ(0) scaleY(0,9)
+  }
+}
+
+
+.animation-wave .waveTop {
+  animation: move_wave 10s linear infinite;
+}
+.animation-wave .waveBottom {
+  animation: move_wave 5s linear infinite;
+}
+.animation-wave .waveMiddle {
+  animation: move_wave 18s linear infinite;
+}
