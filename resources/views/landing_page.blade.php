@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title',
   env('APP_NAME') .
-  '- Pusat informasi dan pengelolaan lomba di bidang akademik dan non-akademik
+  ' - Pusat informasi dan pengelolaan lomba di bidang akademik dan non-akademik
   Institut Teknologi Telkom Surabaya')
 @section('content')
   <!-- Jumbotron start -->
