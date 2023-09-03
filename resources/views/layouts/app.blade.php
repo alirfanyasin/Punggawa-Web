@@ -20,23 +20,55 @@
   @vite(['resources/css/app.css', 'resources/js/app.js'])
   {{-- CSS Custom --}}
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-  @push('css-custom')
-  @endpush
+  @stack('css-custom')
 </head>
 
 <body>
 
-  @include('components.navbar')
 
-  <main>
-    @yield('content')
-  </main>
+  {{-- Navbar --}}
+  @include('components.app.navbar')
 
-  @include('components.footer')
+  <div class="flex">
+    @include('components.app.sidebar')
+    <main class="w-10/12 h-screen px-10 pt-20 overflow-auto">
+      @yield('content')
+    </main>
+
+  </div>
 
 
-  @push('js-custom')
-  @endpush
+
+  <script>
+    var lis = document.querySelectorAll('aside ul li');
+
+    lis.forEach(function(li) {
+      var img = li.querySelector('img');
+      var originalSrc = img.getAttribute('src');
+
+      li.addEventListener('mouseover', function(e) {
+        e.preventDefault();
+        if (originalSrc === '{{ asset('assets/image/icon/icon-dashboard.png') }}') {
+          img.setAttribute('src', '{{ asset('assets/image/icon/icon-dashboard-solid.png') }}');
+        } else if (originalSrc === '{{ asset('assets/image/icon/icon-trophy.png') }}') {
+          img.setAttribute('src', '{{ asset('assets/image/icon/icon-trophy-solid.png') }}');
+        } else if (originalSrc === '{{ asset('assets/image/icon/icon-bootcamp.png') }}') {
+          img.setAttribute('src', '{{ asset('assets/image/icon/icon-bootcamp-solid.png') }}');
+        } else if (originalSrc === '{{ asset('assets/image/icon/icon-certificate.png') }}') {
+          img.setAttribute('src', '{{ asset('assets/image/icon/icon-certificate-solid.png') }}');
+        } else if (originalSrc === '{{ asset('assets/image/icon/icon-setting.png') }}') {
+          img.setAttribute('src', '{{ asset('assets/image/icon/icon-setting-solid.png') }}');
+        }
+      });
+
+      li.addEventListener('mouseout', function(e) {
+        e.preventDefault();
+        img.setAttribute('src', originalSrc);
+      });
+    });
+  </script>
+  @stack('js-custom')
+
 </body>
 
 </html>

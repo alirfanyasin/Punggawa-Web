@@ -20,7 +20,7 @@
         class="flex flex-col items-center p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
         <li>
           <a href="/"
-            class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:hover:text-[#FFB902] md:text-[#E9E9E9] md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
+            class="block py-2 pl-3 pr-4  bg-blue-700 rounded md:bg-transparent md:hover:text-[#FFB902]  md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent {{ Route::is('/') ? 'md:text-[#FFB902]' : 'md:text-white' }}"
             aria-current="page">Beranda</a>
         </li>
         <li>

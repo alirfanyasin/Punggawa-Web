@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.guest')
 
 @section('title', env('APP_NAME') . ' - Divisi Gemastik')
 
@@ -45,68 +45,68 @@
       <h2 class="text-4xl font-semibold">GEMASTIK 2023</h2>
     </header>
     <div class="max-w-screen-xl mx-auto mt-10">
-      <div class="flex flex-row flex-wrap">
-        <div class="p-10 text-center shadow-xl basis-3/12 rounded-xl">
+      <div class="flex flex-row flex-wrap justify-center gap-4">
+        <div class="p-10 text-center shadow-xl w-72 rounded-xl">
           <div class="flex justify-center">
             <img src="{{ asset('assets/image/icon/code-icon.png') }}" alt="">
           </div>
           <h3 class="mt-5 text-xl text-[#4D4D4D] font-bold">Programming</h3>
         </div>
-        <div class="p-10 text-center shadow-xl basis-3/12 rounded-xl">
+        <div class="p-10 text-center shadow-xl w-72 rounded-xl">
           <div class="flex justify-center">
             <img src="{{ asset('assets/image/icon/code-icon.png') }}" alt="">
           </div>
           <h3 class="mt-5 text-xl text-[#4D4D4D] font-bold">Cyber Security</h3>
         </div>
-        <div class="p-10 text-center shadow-xl basis-3/12 rounded-xl">
+        <div class="p-10 text-center shadow-xl w-72 rounded-xl">
           <div class="flex justify-center">
             <img src="{{ asset('assets/image/icon/code-icon.png') }}" alt="">
           </div>
           <h3 class="mt-5 text-xl text-[#4D4D4D] font-bold">Data Mining</h3>
         </div>
-        <div class="p-10 text-center shadow-xl basis-3/12 rounded-xl">
+        <div class="p-10 text-center shadow-xl w-72 rounded-xl">
           <div class="flex justify-center">
             <img src="{{ asset('assets/image/icon/code-icon.png') }}" alt="">
           </div>
           <h3 class="mt-5 text-xl text-[#4D4D4D] font-bold">UX Design</h3>
         </div>
-        <div class="p-10 text-center shadow-xl basis-3/12 rounded-xl">
+        <div class="p-10 text-center shadow-xl w-72 rounded-xl">
           <div class="flex justify-center">
             <img src="{{ asset('assets/image/icon/code-icon.png') }}" alt="">
           </div>
           <h3 class="mt-5 text-xl text-[#4D4D4D] font-bold">Animation</h3>
         </div>
-        <div class="p-10 text-center shadow-xl basis-3/12 rounded-xl">
+        <div class="p-10 text-center shadow-xl w-72 rounded-xl">
           <div class="flex justify-center">
             <img src="{{ asset('assets/image/icon/code-icon.png') }}" alt="">
           </div>
           <h3 class="mt-5 text-xl text-[#4D4D4D] font-bold">Smart City</h3>
         </div>
-        <div class="p-10 text-center shadow-xl basis-3/12 rounded-xl">
+        <div class="p-10 text-center shadow-xl w-72 rounded-xl">
           <div class="flex justify-center">
             <img src="{{ asset('assets/image/icon/code-icon.png') }}" alt="">
           </div>
           <h3 class="mt-5 text-xl text-[#4D4D4D] font-bold">ICT Scientific Paper</h3>
         </div>
-        <div class="p-10 text-center shadow-xl basis-3/12 rounded-xl">
+        <div class="p-10 text-center shadow-xl w-72 rounded-xl">
           <div class="flex justify-center">
             <img src="{{ asset('assets/image/icon/code-icon.png') }}" alt="">
           </div>
           <h3 class="mt-5 text-xl text-[#4D4D4D] font-bold">Software Development</h3>
         </div>
-        <div class="p-10 text-center shadow-xl basis-3/12 rounded-xl">
+        <div class="p-10 text-center shadow-xl w-72 rounded-xl">
           <div class="flex justify-center">
             <img src="{{ asset('assets/image/icon/code-icon.png') }}" alt="">
           </div>
           <h3 class="mt-5 text-xl text-[#4D4D4D] font-bold">Smart Device, Embedded System & IoT</h3>
         </div>
-        <div class="p-10 text-center shadow-xl basis-3/12 rounded-xl">
+        <div class="p-10 text-center shadow-xl w-72 rounded-xl">
           <div class="flex justify-center">
             <img src="{{ asset('assets/image/icon/code-icon.png') }}" alt="">
           </div>
           <h3 class="mt-5 text-xl text-[#4D4D4D] font-bold">ICT Business Development</h3>
         </div>
-        <div class="p-10 text-center shadow-xl basis-3/12 rounded-xl">
+        <div class="p-10 text-center shadow-xl w-72 rounded-xl">
           <div class="flex justify-center">
             <img src="{{ asset('assets/image/icon/code-icon.png') }}" alt="">
           </div>
@@ -116,4 +116,23 @@
     </div>
   </section>
   {{-- Kegiatan end --}}
+
+
+  {{-- Timeline start --}}
+  <section class="mt-32">
+    <header class="text-center">
+      <div class="mb-3 text-2xl">Timeline</div>
+      <h2 class="text-4xl font-semibold">GEMASTIK <span class="text-[#FFB902]">CAMP</span></h2>
+    </header>
+
+    <div class="max-w-screen-xl mx-auto my-10">
+      <img src="{{ asset('assets/image/timeline.png') }}" alt="" class="w-full">
+    </div>
+  </section>
+  {{-- Timeline end --}}
+
+
+  {{-- Chat button start --}}
+  @include('components.chat-button')
+  {{-- Chat button end --}}
 @endsection
