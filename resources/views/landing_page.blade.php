@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.guest')
 @section('title',
   env('APP_NAME') .
-  '- Pusat informasi dan pengelolaan lomba di bidang akademik dan non-akademik
+  ' - Pusat informasi dan pengelolaan lomba di bidang akademik dan non-akademik
   Institut Teknologi Telkom Surabaya')
 @section('content')
   <!-- Jumbotron start -->
@@ -387,5 +387,10 @@
     </div>
   </section>
   <!-- FAQ end -->
+
+
+  {{-- Chat button start --}}
+  @include('components.chat-button')
+  {{-- Chat button end --}}
 
 @endsection

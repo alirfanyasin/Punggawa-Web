@@ -1,7 +1,9 @@
 <?php
 
+use App\DashboardController;
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\User\DashboardController as UserDashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LandingPageController::class, 'index']);
 
-Route::get('/division', [DivisionController::class, 'index']);
+Route::get('/division/gemastik', [DivisionController::class, 'gemastik'])->name('division.gemastik');
+
+Route::get('/dashboard', [UserDashboardController::class, 'index']);

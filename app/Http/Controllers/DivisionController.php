@@ -10,4 +10,9 @@ class DivisionController extends Controller
     {
         return view('division.index');
     }
+
+    public function gemastik()
+    {
+        return  view('divison.gemastik');
+    }
 }

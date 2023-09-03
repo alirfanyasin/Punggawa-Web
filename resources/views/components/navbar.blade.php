@@ -1,6 +1,6 @@
 {{-- Navbar start --}}
 
-<nav class="absolute w-full bg-transparent border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+<nav class="absolute z-10 w-full bg-transparent border-gray-200 dark:bg-gray-900 dark:border-gray-700">
   <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
     <a href="#" class="flex items-center">
       <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="Flowbite Logo" />
@@ -19,8 +19,8 @@
       <ul
         class="flex flex-col items-center p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
         <li>
-          <a href="#"
-            class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:hover:text-[#FFB902] md:text-[#E9E9E9] md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
+          <a href="/"
+            class="block py-2 pl-3 pr-4  bg-blue-700 rounded md:bg-transparent md:hover:text-[#FFB902]  md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent {{ Route::is('/') ? 'md:text-[#FFB902]' : 'md:text-white' }}"
             aria-current="page">Beranda</a>
         </li>
         <li>
@@ -37,7 +37,7 @@
             class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
             <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
               <li>
-                <a href="#"
+                <a href="{{ route('division.gemastik') }}"
                   class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">GEMASTIK</a>
               </li>
               <li>
