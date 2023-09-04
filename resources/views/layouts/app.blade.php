@@ -20,6 +20,8 @@
   @vite(['resources/css/app.css', 'resources/js/app.js'])
   {{-- CSS Custom --}}
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+  {{-- CDN Font awesome --}}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   @stack('css-custom')
 </head>
 
@@ -31,13 +33,21 @@
 
   <div class="flex">
     @include('components.app.sidebar')
-    <main class="w-10/12 h-screen px-10 pt-20 overflow-auto">
+    <main class="h-screen pt-20 overflow-auto lg:px-10 lg:w-10/12 xs:w-full xs:px-5">
       @yield('content')
     </main>
 
   </div>
 
 
+  <script>
+    var menu = document.querySelector('.icon-menu')
+    var sidebar = document.querySelector('aside')
+
+    menu.addEventListener('click', function() {
+      sidebar.classList.toggle('xs:hidden');
+    })
+  </script>
 
   <script>
     var lis = document.querySelectorAll('aside ul li');
@@ -67,7 +77,10 @@
       });
     });
   </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
   @stack('js-custom')
+
 
 </body>
 

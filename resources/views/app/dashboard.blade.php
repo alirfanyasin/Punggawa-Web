@@ -3,7 +3,7 @@
 @section('content')
   {{-- Breadcrumb start --}}
   <div class="flex justify-between breadcrumb">
-    <h3 class="text-2xl font-semibold">Dashboard</h3>
+    <h3 class="font-semibold lg:text-2xl xs:text-md md:text-xl">Dashboard</h3>
     <nav class="flex" aria-label="Breadcrumb">
       <ol class="inline-flex items-center space-x-1 md:space-x-3">
         <li class="inline-flex items-center">
@@ -36,18 +36,21 @@
 
   {{-- Wrapper start --}}
   <section id="wrapper" class="mt-8">
-    <div class="grid grid-cols-2 gap-x-4">
+    <div class="grid lg:grid-cols-2 gap-x-4 md:grid-cols-1">
       <div>
-        <div class="bg-[#F4F2F2] rounded-2xl p-10 flex justify-between items-center">
-          <div>
-            <h1 class="text-3xl font-semibold">Haloo <span class="text-[#15616D]">Irfan Yasin</span></h1>
-            <p class="mt-5 font-light text-[#7B7B7B]">Kelengkapan Profile</p>
+        <div class="bg-[#F4F2F2] rounded-2xl lg:p-10 xs:p-5 flex justify-between gap-4 items-center">
+          <div class="xs:w-8/12 lg:w-1/2">
+            <h1 class="font-semibold lg:text-3xl xs:text-xl">Haloo <span class="text-[#15616D]">Irfan
+                Yasin</span>
+            </h1>
+            <p class="lg:mt-5 md:mt-4 xs:mt-2 font-light text-[#7B7B7B] lg:text-lg xs:text-xs md:text-md">Kelengkapan
+              Profile</p>
             <div class="w-full h-4 mt-2 mb-4 bg-gray-200 rounded-full dark:bg-gray-700">
               <div class="h-4 bg-[#15616D] rounded-full dark:bg-blue-500" style="width: 45%"></div>
             </div>
           </div>
-          <div class="flex justify-end">
-            <img src="{{ asset('assets/image/illustration-1.png') }}" class="w-10/12 " alt="">
+          <div class="flex justify-end lg:w-1/2 xs:w-4/12">
+            <img src="{{ asset('assets/image/illustration-1.png') }}" class="w-full" alt="">
           </div>
         </div>
 
@@ -55,39 +58,39 @@
           <div class="bg-[#F4F2F2] rounded-2xl p-6">
             <div class="relative flex justify-between">
               <div>
-                <h2 class="text-xl font-semibold">Jumlah Lomba</h2>
-                <p class="text-[#7B7B7B]">Telah diikuti</p>
-                <h1 class="text-8xl text-[#15616D] my-6">05</h1>
+                <h2 class="font-semibold md:text-xl xs:text-sm">Jumlah Lomba</h2>
+                <p class="text-[#7B7B7B] xs:text-xs md:text-lg">Telah diikuti</p>
+                <h1 class="text-[#15616D] my-6 xs:text-7xl  lg:text-8xl">05</h1>
               </div>
               <div class="absolute bottom-0 right-0">
-                <img src="{{ asset('assets/image/icon/icon-11.png') }}" class="w-full" alt="">
+                <img src="{{ asset('assets/image/icon/icon-11.png') }}" class="lg:w-full xs:w-8 md:w-20" alt="">
               </div>
             </div>
           </div>
           <div class="bg-[#F4F2F2] rounded-2xl p-6">
             <div class="relative flex justify-between">
               <div>
-                <h2 class="text-xl font-semibold">Jumlah Sertifikat</h2>
-                <p class="text-[#7B7B7B]">Telah didapat</p>
-                <h1 class="text-8xl text-[#15616D] my-6">03</h1>
+                <h2 class="text-xl font-semibold md:text-xl xs:text-sm">Jumlah Sertifikat</h2>
+                <p class="text-[#7B7B7B] xs:text-xs md:text-lg">Telah didapat</p>
+                <h1 class="text-8xl text-[#15616D] my-6 xs:text-7xl  lg:text-8xl">03</h1>
               </div>
               <div class="absolute bottom-0 right-0">
-                <img src="{{ asset('assets/image/icon/icon-12.png') }}" class="w-full" alt="">
+                <img src="{{ asset('assets/image/icon/icon-12.png') }}" class="lg:w-full xs:w-8 md:w-20" alt="">
               </div>
             </div>
           </div>
         </div>
 
-        <div class="bg-[#F4F2F2] rounded-2xl p-6 mt-5">
+        <div class="bg-[#F4F2F2] rounded-2xl p-6 mt-5 mb-5">
           {!! $chart->container() !!}
         </div>
       </div>
 
 
       {{-- Calender start --}}
-      <div class="bg-[#F4F2F2] rounded-2xl p-10">
+      <div class="bg-[#F4F2F2] rounded-2xl lg:p-10 xs:p-5 mb-5">
         <h2 class="text-xl font-semibold">Timeline Lomba</h2>
-        <p class="text-[#7B7B7B]">Terdekat</p>
+        <p class="text-[#7B7B7B] text-md">Terdekat</p>
         <div class="flex items-center justify-center mt-10 rounded-xl">
           <div class="w-full p-4 bg-white shadow rounded-2xl sm:p-6">
             <div class="flex items-center justify-around mb-4">
@@ -204,23 +207,27 @@
         <div class="mt-10">
           <h3 class="text-[#15616D] font-semibold text-lg">20 Agustus 2023</h3>
           <div class="flex items-center mt-4">
-            <img src="" alt="" class="w-20 h-20 bg-white rounded-full">
+            <img src="" alt=""
+              class="bg-white rounded-full lg:w-20 lg:h-20 md:w-16 md:h-16 xs:w-14 xs:h-14">
             <div class="ml-4">
-              <h3 class="text-xl font-semibold">Lomba Gemastik 2024</h3>
-              <p class="text-[#8C8C8C]">Gemastik (Nasional)</p>
+              <h3 class="font-semibold lg:text-xl md:text-lg xs:text-md">Lomba Gemastik 2024</h3>
+              <p class="text-[#8C8C8C] xs:text-sm">Gemastik (Nasional)</p>
             </div>
           </div>
         </div>
         <div class="mt-10">
           <h3 class="text-[#15616D] font-semibold text-lg">20 Agustus 2023</h3>
           <div class="flex items-center mt-4">
-            <img src="" alt="" class="w-20 h-20 bg-white rounded-full">
+            <img src="" alt=""
+              class="bg-white rounded-full lg:w-20 lg:h-20 md:w-16 md:h-16 xs:w-14 xs:h-14">
             <div class="ml-4">
-              <h3 class="text-xl font-semibold">Lomba Gemastik 2024</h3>
-              <p class="text-[#8C8C8C]">Gemastik (Nasional)</p>
+              <h3 class="font-semibold lg:text-xl md:text-lg xs:text-md">Lomba Gemastik 2024</h3>
+              <p class="text-[#8C8C8C] xs:text-sm">Gemastik (Nasional)</p>
             </div>
           </div>
         </div>
+
+
       </div>
       {{-- Calender end --}}
     </div>
