@@ -26,7 +26,7 @@ Route::get('/', [LandingPageController::class, 'index']);
 
 Route::get('/division/gemastik', [DivisionController::class, 'gemastik'])->name('division.gemastik');
 
-Route::get('/login', [AuthController::class, 'login']);
+Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/register', [AuthController::class, 'register']);
 
 Route::get('/dashboard', [UserDashboardController::class, 'index']);

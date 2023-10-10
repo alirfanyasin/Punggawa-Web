@@ -126,6 +126,7 @@
     </header>
 
     <div class="max-w-screen-xl mx-auto my-10">
+      {{-- <img src="https://jagofoto.com/uploads/pose-foto-keren-untuk-wanita-berhijab.jpg" alt="" class="w-full"> --}}
       <img src="{{ asset('assets/image/timeline.png') }}" alt="" class="w-full">
     </div>
   </section>

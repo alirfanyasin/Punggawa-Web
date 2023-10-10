@@ -58,6 +58,10 @@
               <p class="text-[#8C8C8C]">1203220082</p>
             </div>
             <div class="mb-3 list-group">
+              <label for="" class="text-[#2C717C] font-semibold ">Email Address</label>
+              <p class="text-[#8C8C8C]">irfanyasin@gmail.com</p>
+            </div>
+            <div class="mb-3 list-group">
               <label for="" class="text-[#2C717C] font-semibold ">Phone Number</label>
               <p class="text-[#8C8C8C]">087859967039</p>
             </div>
