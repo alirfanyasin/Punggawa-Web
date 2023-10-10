@@ -88,9 +88,10 @@
       </div>
       <div id="tab3" hidden>
         <div class="grid gap-4 lg:grid-cols-4 md:grid-cols-2 xs:grid-cols-1">
-          <div class="flex items-center justify-center">
-            <p class="text-[#8C8C8C]">No Bootcamp Completed</p>
-          </div>
+
+        </div>
+        <div class="flex items-center justify-center mt-10">
+          <p class="text-[#8C8C8C]">No Bootcamp Completed</p>
         </div>
       </div>
 

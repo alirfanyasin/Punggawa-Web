@@ -52,7 +52,8 @@
             </div>
             <div class="mt-5">
               <h4 class="font-semibold">Lomba Competitive Programming Gemastik 2023</h4>
-              <div class="flex items-center justify-end mt-7">
+              <div class="flex items-center justify-between mt-7">
+                <span class="px-3 py-1 text-xs text-white rounded-full bg-[#15616D]">GEMASTIK</span>
                 <span class="text-sm font-light">02 Januari 2023</span>
               </div>
             </div>
@@ -63,7 +64,8 @@
             </div>
             <div class="mt-5">
               <h4 class="font-semibold">Lomba Competitive Programming Gemastik 2023</h4>
-              <div class="flex items-center justify-end mt-7">
+              <div class="flex items-center justify-between mt-7">
+                <span class="px-3 py-1 text-xs text-white rounded-full bg-[#15616D]">PKM</span>
                 <span class="text-sm font-light">02 Januari 2023</span>
               </div>
             </div>
