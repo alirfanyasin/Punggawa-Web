@@ -8,17 +8,29 @@
         <img src="{{ asset('assets/image/illustration-3.png') }}" class="w-full h-screen" alt="">
       </div>
       <div class="lg:px-32 xs:px-10 md:w-1/2 xs:w-full">
-        <form action="" class="">
+        <form action="{{ route('login.post') }}" method="POST">
+          @csrf
           <h1 class="text-[#2C717C] text-4xl mb-10">Masuk</h1>
           <div class="w-full mb-9 input-group">
             <input type="text" name="email"
               class="border-b-2 bg-transparent border-[#2C717C] border-0 focus:ring-0  w-full" id=""
               placeholder="Masukkan NIM / Email">
+
+            @error('email')
+              <small class="text-red-700">
+                {{ $message }}
+              </small>
+            @enderror
           </div>
           <div class="w-full mb-3 input-group">
-            <input type="password" name="email"
+            <input type="password" name="password"
               class="border-b-2 bg-transparent border-[#2C717C] border-0 focus:ring-0 w-full" id=""
               placeholder="Password">
+            @error('password')
+              <small class="text-red-700">
+                {{ $message }}
+              </small>
+            @enderror
           </div>
           <div class="flex justify-between mb-9">
             <div>
@@ -37,7 +49,7 @@
           <a href="">
             <img src="{{ asset('assets/image/icon/icon-google.png') }}" class="mx-auto my-5" alt="">
           </a>
-          <span class="text-[#7E7E7E]">Belum memiliki akun ? <a href="/register"
+          <span class="text-[#7E7E7E]">Belum memiliki akun ? <a href="{{ route('register') }}"
               class="text-[#2C717C] font-semibold">Daftar</a></span>
         </div>
       </div>

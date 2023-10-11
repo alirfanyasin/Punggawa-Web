@@ -40,7 +40,8 @@
       <div>
         <div class="bg-[#F4F2F2] rounded-2xl lg:p-10 xs:p-5 flex justify-between gap-4 items-center">
           <div class="xs:w-8/12 lg:w-1/2">
-            <h1 class="font-semibold lg:text-3xl xs:text-xl">Halo <span class="text-[#15616D]">Irfan Yasin</span>
+            <h1 class="font-semibold lg:text-3xl xs:text-xl">Halo <span
+                class="text-[#15616D]">{{ Auth::user()->name }}</span>
             </h1>
             <p class="lg:mt-5 md:mt-4 xs:mt-2 font-light text-[#7B7B7B] lg:text-lg xs:text-xs md:text-md">Kelengkapan
               Profile</p>
