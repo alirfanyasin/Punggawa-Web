@@ -43,6 +43,12 @@
             <h1 class="font-semibold lg:text-3xl xs:text-xl">Halo <span
                 class="text-[#15616D]">{{ Auth::user()->name }}</span>
             </h1>
+            @hasrole('user')
+              <small>User</small>
+            @endhasrole
+            @hasrole('admin')
+              <small>Admin</small>
+            @endhasrole
             <p class="lg:mt-5 md:mt-4 xs:mt-2 font-light text-[#7B7B7B] lg:text-lg xs:text-xs md:text-md">Kelengkapan
               Profile</p>
             <div class="w-full h-4 mt-2 mb-4 bg-gray-200 rounded-full dark:bg-gray-700">

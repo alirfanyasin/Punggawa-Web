@@ -33,13 +33,16 @@ Route::middleware('guest')->group(function () {
   Route::post('/register', [AuthController::class, 'registerPost'])->name('register.post');
 });
 
-
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'role:user'])->group(function () {
   Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('dashboard');
   Route::get('/contest-followed', [ContestFollowedController::class, 'index']);
   Route::get('/bootcamp', [BootcampController::class, 'index']);
   Route::get('/certificate', [CertificateController::class, 'index']);
   Route::get('/setting', [SettingController::class, 'index']);
-
-  Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
+
+
+Route::middleware(['auth', 'role:admin'])->group(function () {
+  Route::get('/admin/dashboard', [UserDashboardController::class, 'index'])->name('admin.dashboard');
+});
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
