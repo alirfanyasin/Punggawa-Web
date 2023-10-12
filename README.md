@@ -1,5 +1,5 @@
 # Punggawa Web
-Merupakan sebuah website dari organisasi punggawa IT Telkom Surabaya
+Merupakan sebuah website dari organisasi punggawa IT Telkom Surabayaa
 
 ## Contributor Rules
 - Mengikuti penulisan template yang telah dibuat
