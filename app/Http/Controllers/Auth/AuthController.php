@@ -29,12 +29,20 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('dashboard');
+            if (Auth::user()->hasRole('super-admin')) {
+                return redirect()->intended('/admin/dashboard');
+            }
+            if (Auth::user()->hasRole('user')) {
+                return redirect()->intended('/dashboard');
+            }
+            if (Auth::user()->hasRole('division')) {
+                return redirect()->intended('/division/dashboard');
+            }
         }
 
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ])->onlyInput('email');
+            'message' => 'Email atau Password salah.',
+        ]);
     }
 
 

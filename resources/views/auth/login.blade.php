@@ -11,6 +11,11 @@
         <form action="{{ route('login.post') }}" method="POST">
           @csrf
           <h1 class="text-[#2C717C] text-4xl mb-10">Masuk</h1>
+          @error('message')
+            <div class="w-full py-3 mb-3 text-center text-white bg-red-600 rounded-lg">
+              <i class="mr-3 fa-solid fa-triangle-exclamation"></i> Email atau Password anda salah
+            </div>
+          @enderror
           <div class="w-full mb-9 input-group">
             <input type="text" name="email"
               class="border-b-2 bg-transparent border-[#2C717C] border-0 focus:ring-0  w-full" id=""
