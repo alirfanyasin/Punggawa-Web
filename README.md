@@ -1,5 +1,5 @@
 # Punggawa Web
-Merupakan sebuah website dari organisasi punggawa IT Telkom Surabayaa
+Merupakan sebuah website dari organisasi punggawa IT Telkom Surabaya
 
 ## Contributor Rules
 - Mengikuti penulisan template yang telah dibuat
@@ -49,7 +49,7 @@ php artisan key:generate
 
 ## Running Project
 ```sh
-php artisan serve
+php artisan serve    
 
 npm run dev
 ```
