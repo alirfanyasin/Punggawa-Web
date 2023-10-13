@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CertificateController;
 use App\Http\Controllers\Admin\ContestFollowedController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Division\Gemastik\ContestController;
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\User\DashboardController as UserDashboardController;
@@ -33,6 +34,7 @@ Route::middleware('guest')->group(function () {
   Route::post('/register', [AuthController::class, 'registerPost'])->name('register.post');
 });
 
+// Route User or Mahasiswa
 Route::middleware(['auth', 'role:user'])->group(function () {
   Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('dashboard');
   Route::get('/contest-followed', [ContestFollowedController::class, 'index']);
@@ -41,8 +43,21 @@ Route::middleware(['auth', 'role:user'])->group(function () {
   Route::get('/setting', [SettingController::class, 'index']);
 });
 
-
-Route::middleware(['auth', 'role:admin'])->group(function () {
-  Route::get('/admin/dashboard', [UserDashboardController::class, 'index'])->name('admin.dashboard');
+// Route Super Admin
+Route::middleware(['auth', 'role:super-admin'])->group(function () {
+  Route::prefix('app')->group(function () {
+    Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('super-admin.dashboard');
+  });
 });
+
+// Route Division
+Route::middleware(['auth', 'role:division'])->group(function () {
+  Route::prefix('division')->group(function () {
+    Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('division.dashboard');
+    Route::get('/contest', [ContestController::class, 'index'])->name('division.contest');
+    Route::get('/contest/create', [ContestController::class, 'create'])->name('division.contest.create');
+  });
+});
+
+
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
