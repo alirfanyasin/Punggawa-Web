@@ -43,12 +43,6 @@
             <h1 class="font-semibold lg:text-3xl xs:text-xl">Halo <span
                 class="text-[#15616D]">{{ Auth::user()->name }}</span>
             </h1>
-            @hasrole('user')
-              <small>User</small>
-            @endhasrole
-            @hasrole('admin')
-              <small>Admin</small>
-            @endhasrole
             <p class="lg:mt-5 md:mt-4 xs:mt-2 font-light text-[#7B7B7B] lg:text-lg xs:text-xs md:text-md">Kelengkapan
               Profile</p>
             <div class="w-full h-4 mt-2 mb-4 bg-gray-200 rounded-full dark:bg-gray-700">
@@ -88,152 +82,15 @@
           </div>
         </div>
 
-        <div class="bg-[#F4F2F2] rounded-2xl p-6 mt-5 mb-5">
-          {!! $chart->container() !!}
-        </div>
+
       </div>
 
       {{-- Calender start --}}
-      <div class="bg-[#F4F2F2] rounded-2xl lg:p-10 xs:p-5 mb-5">
-        <h2 class="text-xl font-semibold">Timeline Lomba</h2>
-        <p class="text-[#7B7B7B] text-md">Terdekat</p>
-        <div class="flex items-center justify-center mt-10 rounded-xl">
-          <div class="w-full p-4 bg-white shadow rounded-2xl sm:p-6">
-            <div class="flex items-center justify-around mb-4">
-              <button class="p-2 border rounded-lg sm:p-4 hover:bg-gray-200">
-                <svg class="w-4 h-4 sm:w-5 sm:h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path
-                    d="M4.83594 12.0001L11.043 18.2072L12.4573 16.793L7.66436 12.0001L12.4573 7.20718L11.043 5.79297L4.83594 12.0001ZM10.4858 12.0001L16.6929 18.2072L18.1072 16.793L13.3143 12.0001L18.1072 7.20718L16.6929 5.79297L10.4858 12.0001Z">
-                  </path>
-                </svg>
-              </button>
-              <button class="p-2 border rounded-lg sm:p-4 hover:bg-gray-200">
-                <svg class="w-4 h-4 sm:w-5 sm:h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path
-                    d="M10.8284 12.0007L15.7782 16.9504L14.364 18.3646L8 12.0007L14.364 5.63672L15.7782 7.05093L10.8284 12.0007Z">
-                  </path>
-                </svg>
-              </button>
-              <div class="text-base font-semibold">August 2023</div>
-              <button class="p-2 border rounded-lg sm:p-4 hover:bg-gray-200">
-                <svg class="w-4 h-4 sm:w-5 sm:h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path
-                    d="M13.1714 12.0007L8.22168 7.05093L9.63589 5.63672L15.9999 12.0007L9.63589 18.3646L8.22168 16.9504L13.1714 12.0007Z">
-                  </path>
-                </svg>
-              </button>
-              <button class="p-2 border rounded-lg sm:p-4 hover:bg-gray-200">
-                <svg class="w-4 h-4 sm:w-5 sm:h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path
-                    d="M19.1643 12.0001L12.9572 5.79297L11.543 7.20718L16.3359 12.0001L11.543 16.793L12.9572 18.2072L19.1643 12.0001ZM13.5144 12.0001L7.30728 5.79297L5.89307 7.20718L10.686 12.0001L5.89307 16.793L7.30728 18.2072L13.5144 12.0001Z">
-                  </path>
-                </svg>
-              </button>
-            </div>
-            <div class="grid grid-cols-7 gap-2">
-              <div class="text-center text-gray-500">Su</div>
-              <div class="text-center text-gray-500">Mo</div>
-              <div class="text-center text-gray-500">Tu</div>
-              <div class="text-center text-gray-500">We</div>
-              <div class="text-center text-gray-500">Th</div>
-              <div class="text-center text-gray-500">Fr</div>
-              <div class="text-center text-gray-500">Sa</div>
-              <!-- Calendar days -->
-              <div class="p-2 text-center text-gray-500 rounded-md sm:p-4 hover:bg-gray-500 hover:text-white">-
-              </div>
-              <div class="p-2 text-center text-gray-500 rounded-md sm:p-4 hover:bg-gray-500 hover:text-white">-
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">1
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">2
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">3
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">4
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">5
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">6
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">7
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">8
-              </div>
-              <div
-                class="p-2 text-center text-white bg-[#15616D] rounded-full border-gray-500 sm:p-4 hover:bg-white hover:text-gray-900 hover:border">
-                9</div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">10
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">11
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">12
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">13
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">14
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">15
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">16
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">17
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">18
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">19
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">20
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">21
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">22
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">23
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">24
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">25
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">26
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">27
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">28
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">29
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">30
-              </div>
-              <div class="p-2 text-center text-gray-700 rounded-md sm:p-4 hover:bg-gray-900 hover:text-white">31
-              </div>
-            </div>
-          </div>
+      <div class="bg-[#F4F2F2] rounded-2xl lg:p-5 xs:p-5 mb-5 min-[300px]:mt-3">
+        <h2 class="mb-10 text-xl font-semibold">Statistik Mengikuti Lomba</h2>
+        <div class="bg-[#F4F2F2] rounded-2xl">
+          {!! $chart->container() !!}
         </div>
-
-        <div class="mt-10">
-          <h3 class="text-[#15616D] font-semibold text-lg">20 Agustus 2023</h3>
-          <div class="flex items-center mt-4">
-            <img src="" alt=""
-              class="bg-white rounded-full lg:w-20 lg:h-20 md:w-16 md:h-16 xs:w-14 xs:h-14">
-            <div class="ml-4">
-              <h3 class="font-semibold lg:text-xl md:text-lg xs:text-md">Lomba Gemastik 2024</h3>
-              <p class="text-[#8C8C8C] xs:text-sm">Gemastik (Nasional)</p>
-            </div>
-          </div>
-        </div>
-        <div class="mt-10">
-          <h3 class="text-[#15616D] font-semibold text-lg">20 Agustus 2023</h3>
-          <div class="flex items-center mt-4">
-            <img src="" alt=""
-              class="bg-white rounded-full lg:w-20 lg:h-20 md:w-16 md:h-16 xs:w-14 xs:h-14">
-            <div class="ml-4">
-              <h3 class="font-semibold lg:text-xl md:text-lg xs:text-md">Lomba Gemastik 2024</h3>
-              <p class="text-[#8C8C8C] xs:text-sm">Gemastik (Nasional)</p>
-            </div>
-          </div>
-        </div>
-
-
       </div>
       {{-- Calender end --}}
     </div>
@@ -247,8 +104,7 @@
     role="alert">
     <div
       class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-orange-500 bg-orange-100 rounded-lg dark:bg-orange-700 dark:text-orange-200">
-      <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-        viewBox="0 0 20 20">
+      <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
         <path
           d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM10 15a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm1-4a1 1 0 0 1-2 0V6a1 1 0 0 1 2 0v5Z" />
       </svg>
