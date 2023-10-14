@@ -24,7 +24,7 @@
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="m1 9 4-4-4-4" />
             </svg>
-            <a href="{{ route('division.contest') }}"
+            <a href="{{ route('division.competition') }}"
               class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">Contest
             </a>
           </div>
@@ -45,9 +45,9 @@
             id="btn-finish">Done</a>
         </div>
         <div>
-          <a href="{{ route('division.contest.create') }}"
+          <a href="{{ route('division.competition.create') }}"
             class="px-8 py-2 rounded-full text-white bg-[#15616D] hover:bg-[#2a8996]" id="btn-all">Add
-            Contest</a>
+            Competition</a>
         </div>
       </div>
 

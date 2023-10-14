@@ -30,7 +30,7 @@ class AuthController extends Controller
             $request->session()->regenerate();
 
             if (Auth::user()->hasRole('super-admin')) {
-                return redirect()->intended('/admin/dashboard');
+                return redirect()->intended('/app/dashboard');
             }
             if (Auth::user()->hasRole('user')) {
                 return redirect()->intended('/dashboard');

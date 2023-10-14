@@ -3,7 +3,7 @@
 @section('content')
   {{-- Breadcrumb start --}}
   <div class="flex justify-between breadcrumb">
-    <h3 class="font-semibold lg:text-2xl xs:text-md md:text-xl">Create Contest</h3>
+    <h3 class="font-semibold lg:text-2xl xs:text-md md:text-xl">Create Competition</h3>
     <nav class="flex" aria-label="Breadcrumb">
       <ol class="inline-flex items-center space-x-1 md:space-x-3">
         <li class="inline-flex items-center">
@@ -24,9 +24,9 @@
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="m1 9 4-4-4-4" />
             </svg>
-            <a href="{{ route('division.contest.create') }}"
+            <a href="{{ route('division.competition.create') }}"
               class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">Create
-              Contest
+              Competition
             </a>
           </div>
         </li>
@@ -41,15 +41,15 @@
       <div class="flex gap-4">
         <div class="w-8/12">
           <div class="mb-3">
-            <label for="name_contest" class="block mb-2">Name Contest</label>
-            <input type="text" name="name_contest" id="name_contest" class="w-full rounded-xl">
+            <label for="name_competition" class="block mb-2">Name Competition</label>
+            <input type="text" name="name_competition" id="name_competition" class="w-full rounded-xl">
           </div>
           <div class="mb-3">
             <label for="description" class="block mb-2">Description</label>
             <textarea name="description" id="description" cols="30" rows="6" class="w-full rounded-xl"></textarea>
           </div>
 
-          <div class="mb-3 grid grid-cols-2 gap-4">
+          <div class="grid grid-cols-2 gap-4 mb-3">
             <div>
               <label for="start_date" class="block mb-2">Start Date</label>
               <input type="date" id="start_date" name="start_date" class="w-full rounded-xl">
@@ -59,14 +59,20 @@
               <input type="date" id="end_date" name="end_date" class="w-full rounded-xl">
             </div>
           </div>
-          <div class="mb-3">
-            <label for="registration_link" class="block mb-2">Registration Link</label>
-            <input type="text" name="registration_link" id="registration_link" class="w-full rounded-xl">
+          <div class="grid grid-cols-2 gap-4 mb-3">
+            <div>
+              <label for="guidebook_link" class="block mb-2">Guidebook Link</label>
+              <input type="text" name="guidebook_link" id="guidebook_link" class="w-full rounded-xl">
+            </div>
+            <div>
+              <label for="registration_link" class="block mb-2">Registration Link</label>
+              <input type="text" name="registration_link" id="registration_link" class="w-full rounded-xl">
+            </div>
           </div>
 
           <div class="mb-3">
-            <label for="thumbnail" class="block mb-2">Thumbnail</label>
-            <input type="file" name="thumbnail" id="thumbnail" class="w-full rounded-xl" onchange="previewFile()">
+            <label for="poster" class="block mb-2">Poster</label>
+            <input type="file" name="poster" id="poster" class="w-full rounded-xl" onchange="previewFile()">
           </div>
 
         </div>
@@ -86,25 +92,28 @@
 
   @include('components.app.footer')
 
-  <script>
-    function previewFile() {
-      const preview = document.querySelector("#previewImg");
-      const file = document.querySelector("input[type=file]").files[0];
-      const reader = new FileReader();
+  @push('js-custom')
+    <script>
+      function previewFile() {
+        const preview = document.querySelector("#previewImg");
+        const file = document.querySelector("input[type=file]").files[0];
+        const reader = new FileReader();
 
-      reader.addEventListener(
-        "load",
-        () => {
-          // convert image file to base64 string
-          preview.src = reader.result;
-        },
-        false,
-      );
+        reader.addEventListener(
+          "load",
+          () => {
+            // convert image file to base64 string
+            preview.src = reader.result;
+          },
+          false,
+        );
 
-      if (file) {
-        reader.readAsDataURL(file);
+        if (file) {
+          reader.readAsDataURL(file);
+        }
       }
-    }
-  </script>
+    </script>
+  @endpush
+
 
 @endsection
