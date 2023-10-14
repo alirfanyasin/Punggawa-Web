@@ -13,48 +13,36 @@
         @endif
       </li>
       <li class="text-[#15616D] font-semibold  hover:font-bold mb-3">
-        @if (Request::is('contest-followed'))
-          <a href="/contest-followed" class="flex items-center px-8 py-3">
-            <img src="{{ asset('assets/image/icon/icon-trophy-solid.png') }}" class="mr-3 w-7 h-7" alt="">Contest
-            Followed</a>
+        @if (Request::is('competition'))
+          <a href="{{ route('competition') }}" class="flex items-center px-8 py-3">
+            <img src="{{ asset('assets/image/icon/icon-trophy-solid.png') }}" class="mr-3 w-7 h-7"
+              alt="">Competition</a>
         @else
-          <a href="/contest-followed" class="flex items-center px-8 py-3">
-            <img src="{{ asset('assets/image/icon/icon-trophy.png') }}" class="mr-3 w-7 h-7" alt="">Contest
-            Followed</a>
+          <a href="{{ route('competition') }}" class="flex items-center px-8 py-3">
+            <img src="{{ asset('assets/image/icon/icon-trophy.png') }}" class="mr-3 w-7 h-7"
+              alt="">Competition</a>
         @endif
       </li>
       <li class="text-[#15616D] font-semibold  hover:font-bold mb-3">
-        @if (Request::is('bootcamp'))
-          <a href="/bootcamp" class="flex items-center px-8 py-3">
-            <img src="{{ asset('assets/image/icon/icon-bootcamp-solid.png') }}" class="mr-3 w-7 h-7"
-              alt="">Bootcamp</a>
+        @if (Request::is('academic-advisor'))
+          <a href="{{ route('academic-advisor') }}" class="flex items-center px-8 py-3">
+            <img src="{{ asset('assets/image/icon/icon-lecture-solid.png') }}" class="mr-3 w-7 h-7"
+              alt="">Academic Advisor</a>
         @else
-          <a href="/bootcamp" class="flex items-center px-8 py-3">
-            <img src="{{ asset('assets/image/icon/icon-bootcamp.png') }}" class="mr-3 w-7 h-7" alt="">Bootcamp</a>
-        @endif
-
-      </li>
-      <li class="text-[#15616D] font-semibold  hover:font-bold mb-3">
-        @if (Request::is('certificate'))
-          <a href="certificate" class="flex items-center px-8 py-3">
-            <img src="{{ asset('assets/image/icon/icon-certificate-solid.png') }}" class="mr-3 w-7 h-7"
-              alt="">Certificate</a>
-        @else
-          <a href="certificate" class="flex items-center px-8 py-3">
-            <img src="{{ asset('assets/image/icon/icon-certificate.png') }}" class="mr-3 w-7 h-7"
-              alt="">Certificate</a>
+          <a href="{{ route('academic-advisor') }}" class="flex items-center px-8 py-3">
+            <img src="{{ asset('assets/image/icon/icon-lecture.png') }}" class="mr-3 w-7 h-7" alt="">Academic
+            Advisor</a>
         @endif
       </li>
       <li class="text-[#15616D] font-semibold  hover:font-bold mb-3">
-        @if (Request::is('setting'))
-          <a href="setting" class="flex items-center px-8 py-3">
-            <img src="{{ asset('assets/image/icon/icon-setting-solid.png') }}" class="mr-3 w-7 h-7"
-              alt="">Setting</a>
+        @if (Request::is('invoice'))
+          <a href="{{ route('invoice') }}" class="flex items-center px-8 py-3">
+            <img src="{{ asset('assets/image/icon/icon-invoice-solid.png') }}" class="mr-3 w-7 h-7"
+              alt="">Invoice</a>
         @else
-          <a href="setting" class="flex items-center px-8 py-3">
-            <img src="{{ asset('assets/image/icon/icon-setting.png') }}" class="mr-3 w-7 h-7" alt="">Setting</a>
+          <a href="{{ route('invoice') }}" class="flex items-center px-8 py-3">
+            <img src="{{ asset('assets/image/icon/icon-invoice.png') }}" class="mr-3 w-7 h-7" alt="">Invoice</a>
         @endif
-
       </li>
     </ul>
   @endhasrole

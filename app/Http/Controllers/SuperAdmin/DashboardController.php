@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\SuperAdmin;
 
 use App\Charts\BootcampChart;
 use App\Charts\ParticipationChart;
@@ -11,7 +11,7 @@ class DashboardController extends Controller
 {
     public function index(ParticipationChart $participationChart, BootcampChart $bootcampChart)
     {
-        return view('app.user.dashboard', [
+        return view('app.super-admin.dashboard', [
             'chart' => $participationChart->build(),
             'bootcamp' => $bootcampChart->build(),
         ]);
