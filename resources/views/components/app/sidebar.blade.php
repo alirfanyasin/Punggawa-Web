@@ -49,7 +49,7 @@
 
   @hasrole('super-admin')
     <ul class="pt-20">
-      <li class="text-[#15616D] font-semibold  hover:font-bold mb-3">
+      <li class="text-[#15616D] font-semibold hover:font-bold mb-3">
         @if (Request::is('app/dashboard'))
           <a href="{{ route('super-admin.dashboard') }}" class="flex items-center px-8 py-3">
             <img src="{{ asset('assets/image/icon/icon-dashboard-solid.png') }}" class="mr-3 w-7 h-7" alt="">
@@ -58,6 +58,39 @@
           <a href="{{ route('super-admin.dashboard') }}" class="flex items-center px-8 py-3">
             <img src="{{ asset('assets/image/icon/icon-dashboard.png') }}" class="mr-3 w-7 h-7" alt="">
             Dashboard</a>
+        @endif
+      </li>
+      <li class="text-[#15616D] font-semibold hover:font-bold mb-3">
+        @if (Request::is('app/academic-advisor'))
+          <a href="{{ route('super-admin.academic-advisor') }}" class="flex items-center px-8 py-3">
+            <img src="{{ asset('assets/image/icon/icon-lecture-solid.png') }}" class="mr-3 w-7 h-7" alt="">
+            Academic Advisor</a>
+        @else
+          <a href="{{ route('super-admin.academic-advisor') }}" class="flex items-center px-8 py-3">
+            <img src="{{ asset('assets/image/icon/icon-lecture.png') }}" class="mr-3 w-7 h-7" alt="">
+            Academic Advisor</a>
+        @endif
+      </li>
+      <li class="text-[#15616D] font-semibold hover:font-bold mb-3">
+        @if (Request::is('app/invoice'))
+          <a href="{{ route('super-admin.invoice') }}" class="flex items-center px-8 py-3">
+            <img src="{{ asset('assets/image/icon/icon-invoice-solid.png') }}" class="mr-3 w-7 h-7" alt="">
+            Invoice</a>
+        @else
+          <a href="{{ route('super-admin.invoice') }}" class="flex items-center px-8 py-3">
+            <img src="{{ asset('assets/image/icon/icon-invoice.png') }}" class="mr-3 w-7 h-7" alt="">
+            Invoice</a>
+        @endif
+      </li>
+      <li class="text-[#15616D] font-semibold hover:font-bold mb-3">
+        @if (Request::is('app/account'))
+          <a href="{{ route('super-admin.account') }}" class="flex items-center px-8 py-3">
+            <img src="{{ asset('assets/image/icon/icon-account-solid.png') }}" class="w-5 mr-6 h-7" alt="">
+            Account</a>
+        @else
+          <a href="{{ route('super-admin.account') }}" class="flex items-center px-8 py-3">
+            <img src="{{ asset('assets/image/icon/icon-account.png') }}" class="w-6 mr-3 h-7" alt="">
+            Account</a>
         @endif
       </li>
     </ul>
