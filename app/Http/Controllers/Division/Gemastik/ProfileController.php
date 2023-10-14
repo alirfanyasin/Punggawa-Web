@@ -5,14 +5,14 @@ namespace App\Http\Controllers\Division\Gemastik;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ContestController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('app.division.gemastik.contest');
+        return view('app.division.gemastik.profile');
     }
 
     /**
@@ -20,7 +20,7 @@ class ContestController extends Controller
      */
     public function create()
     {
-        return view('app.division.gemastik.create_contest');
+        //
     }
 
     /**

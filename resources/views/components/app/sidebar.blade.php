@@ -89,13 +89,25 @@
         @endif
       </li>
       <li class="text-[#15616D] font-semibold  hover:font-bold mb-3">
-        @if (Request::is('division/contest') || Request::is('division/contest/*'))
-          <a href="{{ route('division.contest') }}" class="flex items-center px-8 py-3">
+        @if (Request::is('division/competition') || Request::is('division/competition/*'))
+          <a href="{{ route('division.competition') }}" class="flex items-center px-8 py-3">
             <img src="{{ asset('assets/image/icon/icon-trophy-solid.png') }}" class="mr-3 w-7 h-7"
-              alt="">Contest</a>
+              alt="">Competition</a>
         @else
-          <a href="{{ route('division.contest') }}" class="flex items-center px-8 py-3">
-            <img src="{{ asset('assets/image/icon/icon-trophy.png') }}" class="mr-3 w-7 h-7" alt="">Contest</a>
+          <a href="{{ route('division.competition') }}" class="flex items-center px-8 py-3">
+            <img src="{{ asset('assets/image/icon/icon-trophy.png') }}" class="mr-3 w-7 h-7"
+              alt="">Competition</a>
+        @endif
+      </li>
+      <li class="text-[#15616D] font-semibold  hover:font-bold mb-3">
+        @if (Request::is('division/profile'))
+          <a href="{{ route('division.profile') }}" class="flex items-center px-8 py-3">
+            <img src="{{ asset('assets/image/icon/icon-division-profile-solid.png') }}" class="mr-3 w-7 h-7"
+              alt="">Division Profile</a>
+        @else
+          <a href="{{ route('division.profile') }}" class="flex items-center px-8 py-3">
+            <img src="{{ asset('assets/image/icon/icon-division-profile.png') }}" class="mr-3 w-7 h-7"
+              alt="">Division Profile</a>
         @endif
       </li>
     </ul>
