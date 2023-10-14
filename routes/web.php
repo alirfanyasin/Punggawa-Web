@@ -1,16 +1,15 @@
 <?php
 
 use App\DashboardController;
-use App\Http\Controllers\Admin\BootcampController;
-use App\Http\Controllers\Admin\CertificateController;
-use App\Http\Controllers\Admin\ContestFollowedController;
-use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Division\Gemastik\CompetitionController as DivisionCompetitionController;
 use App\Http\Controllers\Division\Gemastik\ProfileController as DivisionProfileController;
+use App\Http\Controllers\User\DashboardController as UserDashboardController;
+use App\Http\Controllers\User\CompetitionController as UserCompetitionController;
+use App\Http\Controllers\User\AcademicAdvisorController as UserAcademicAdvisorController;
+use App\Http\Controllers\User\InvoiceController as UserInvoiceController;
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\LandingPageController;
-use App\Http\Controllers\User\DashboardController as UserDashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,10 +39,9 @@ Route::middleware('guest')->group(function () {
 // Route User or Mahasiswa
 Route::middleware(['auth', 'role:user'])->group(function () {
   Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('dashboard');
-  Route::get('/contest-followed', [ContestFollowedController::class, 'index']);
-  Route::get('/bootcamp', [BootcampController::class, 'index']);
-  Route::get('/certificate', [CertificateController::class, 'index']);
-  Route::get('/setting', [SettingController::class, 'index']);
+  Route::get('/competition', [UserCompetitionController::class, 'index'])->name('competition');
+  Route::get('/academic-advisor', [UserAcademicAdvisorController::class, 'index'])->name('academic-advisor');
+  Route::get('/invoice', [UserInvoiceController::class, 'index'])->name('invoice');
 });
 
 // Route Super Admin
