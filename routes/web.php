@@ -1,6 +1,9 @@
 <?php
 
-use App\DashboardController;
+use App\Http\Controllers\SuperAdmin\DashboardController as SuperAdminDashboardController;
+use App\Http\Controllers\SuperAdmin\AcademicAdvisorController as SuperAdminAcademicAdvisorController;
+use App\Http\Controllers\SuperAdmin\InvoiceController as SuperAdminInvoiceController;
+use App\Http\Controllers\SuperAdmin\AccountController as SuperAdminAccountController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Division\Gemastik\CompetitionController as DivisionCompetitionController;
 use App\Http\Controllers\Division\Gemastik\ProfileController as DivisionProfileController;
@@ -47,7 +50,10 @@ Route::middleware(['auth', 'role:user'])->group(function () {
 // Route Super Admin
 Route::middleware(['auth', 'role:super-admin'])->group(function () {
   Route::prefix('app')->group(function () {
-    Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('super-admin.dashboard');
+    Route::get('/dashboard', [SuperAdminDashboardController::class, 'index'])->name('super-admin.dashboard');
+    Route::get('/academic-advisor', [SuperAdminAcademicAdvisorController::class, 'index'])->name('super-admin.academic-advisor');
+    Route::get('/invoice', [SuperAdminInvoiceController::class, 'index'])->name('super-admin.invoice');
+    Route::get('/account', [SuperAdminAccountController::class, 'index'])->name('super-admin.account');
   });
 });
 
