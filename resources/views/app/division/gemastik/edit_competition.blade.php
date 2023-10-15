@@ -1,9 +1,9 @@
 @extends('layouts.app')
-@section('title', env('APP_NAME') . ' - Create Contest')
+@section('title', env('APP_NAME') . ' - Edit Competition')
 @section('content')
   {{-- Breadcrumb start --}}
   <div class="flex justify-between breadcrumb">
-    <h3 class="font-semibold lg:text-2xl xs:text-md md:text-xl">Create Competition</h3>
+    <h3 class="font-semibold lg:text-2xl xs:text-md md:text-xl">Edit Competition</h3>
     <nav class="flex" aria-label="Breadcrumb">
       <ol class="inline-flex items-center space-x-1 md:space-x-3">
         <li class="inline-flex items-center">
@@ -25,7 +25,7 @@
                 d="m1 9 4-4-4-4" />
             </svg>
             <a href="{{ route('division.competition.create') }}"
-              class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">Create
+              class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">Edit
               Competition
             </a>
           </div>
@@ -37,14 +37,15 @@
 
   {{-- Wrapper start --}}
   <section id="wrapper" class="h-screen mt-8">
-    <form action="{{ route('division.competition.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('division.competition.update', $data->id) }}" method="POST" enctype="multipart/form-data">
       @csrf
+      @method('PUT')
       <div class="flex gap-4">
         <div class="w-8/12">
           <div class="mb-3">
             <label for="name_competition" class="block mb-2">Name Competition</label>
             <input type="text" name="name" id="name_competition" class="w-full rounded-xl"
-              value="{{ old('name') }}">
+              value="{{ $data->name }}">
             @error('name')
               <small class="text-red-700">
                 {{ $message }}
@@ -53,7 +54,7 @@
           </div>
           <div class="mb-3">
             <label for="description" class="block mb-2">Description</label>
-            <textarea name="description" id="description" cols="30" rows="6" class="w-full rounded-xl">{{ old('description') }}</textarea>
+            <textarea name="description" id="description" cols="30" rows="6" class="w-full rounded-xl">{{ $data->description }}</textarea>
             @error('description')
               <small class="text-red-700">
                 {{ $message }}
@@ -65,7 +66,7 @@
             <div>
               <label for="start_date" class="block mb-2">Start Date</label>
               <input type="date" id="start_date" name="start_date" class="w-full rounded-xl"
-                value="{{ old('start_date') }}">
+                value="{{ $data->start_date }}">
               @error('start_date')
                 <small class="text-red-700">
                   {{ $message }}
@@ -75,26 +76,27 @@
             <div>
               <label for="end_date" class="block mb-2">End Date <span class="italic">(optional)</span></label>
               <input type="date" id="end_date" name="end_date" class="w-full rounded-xl"
-                value="{{ old('end_date') }}">
+                value="{{ $data->end_date }}">
             </div>
           </div>
           <div class="grid grid-cols-2 gap-4 mb-3">
             <div>
               <label for="guidebook_link" class="block mb-2">Guidebook Link <span class="italic">(optional)</span></label>
               <input type="text" name="guidebook_link" id="guidebook_link" class="w-full rounded-xl"
-                value="{{ old('guidebook_link') }}">
+                value="{{ $data->guidebook_link }}">
             </div>
             <div>
               <label for="registration_link" class="block mb-2">Registration Link <span
                   class="italic">(optional)</span></label>
               <input type="text" name="registration_link" id="registration_link" class="w-full rounded-xl"
-                value="{{ old('registration_link') }}">
+                value="{{ $data->registration_link }}">
             </div>
           </div>
 
           <div class="mb-3">
             <label for="poster" class="block mb-2">Poster</label>
-            <input type="file" name="poster" id="poster" class="w-full rounded-xl" onchange="previewFile()">
+            <input type="file" name="poster" id="poster" class="w-full rounded-xl" onchange="previewFile()"
+              value="{{ $data->poster }}">
             @error('poster')
               <small class="text-red-700">
                 {{ $message }}
@@ -105,13 +107,14 @@
         </div>
         <div class="w-4/12">
           <div class="mt-7">
-            <img src="{{ asset('assets/image/no-img-2.jpg') }}" alt="" class="w-full rounded-xl" id="previewImg">
+            <img src="{{ asset('storage/poster/' . $data->poster) }}" alt="" class="w-full rounded-xl"
+              id="previewImg">
           </div>
         </div>
       </div>
       <div class="mt-5">
         <button type="submit" class="px-8 py-2 rounded-xl text-white bg-[#15616D] hover:bg-[#2a8996]"
-          id="btn-all">Submit</button>
+          id="btn-all">Update</button>
       </div>
     </form>
   </section>

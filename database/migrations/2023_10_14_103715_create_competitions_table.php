@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->string('name');
             $table->longText('description');
-            $table->date('start_date')->nullable();
+            $table->date('start_date');
             $table->date('end_date')->nullable();
             $table->string('guidebook_link')->nullable();
             $table->string('registration_link')->nullable();
