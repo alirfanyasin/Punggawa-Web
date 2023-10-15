@@ -87,11 +87,13 @@
   <div id="dropdownDots"
     class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconButton">
-      <li>
-        <a href="{{ route('division.competition.edit', $data->id) }}"
-          class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i
-            class="fa-regular fa-pen-to-square"></i> Edit</a>
-      </li>
+      @if ($data->status == 'Active')
+        <li>
+          <a href="{{ route('division.competition.edit', $data->id) }}"
+            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i
+              class="fa-regular fa-pen-to-square"></i> Edit</a>
+        </li>
+      @endif
       <li>
         <form action="{{ route('division.competition.delete', $data->id) }}" method="POST" class="w-full">
           @csrf
@@ -112,7 +114,6 @@
           </form>
         </li>
       @endif
-
     </ul>
   </div>
 
