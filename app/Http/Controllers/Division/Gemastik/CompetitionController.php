@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Division\Gemastik;
 
 use App\Http\Controllers\Controller;
 use App\Models\Competition;
+use App\Models\DivisionProfile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;

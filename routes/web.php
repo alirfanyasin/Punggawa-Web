@@ -71,6 +71,6 @@ Route::middleware(['auth', 'role:division'])->group(function () {
     Route::delete('/competition/{id}/delete', [DivisionCompetitionController::class, 'destroy'])->name('division.competition.delete');
     Route::patch('/competition/{id}/done', [DivisionCompetitionController::class, 'done'])->name('division.competition.done');
     Route::get('/profile', [DivisionProfileController::class, 'index'])->name('division.profile');
-    Route::post('/profile/update', [DivisionProfileController::class, 'update'])->name('division.profile.update');
+    Route::post('/profile/{user_id}/update', [DivisionProfileController::class, 'update'])->name('division.profile.update');
   });
 });

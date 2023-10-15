@@ -37,38 +37,75 @@
 
   {{-- Wrapper start --}}
   <section id="wrapper" class="h-screen mt-8">
-    <form action="">
+    <form action="{{ route('division.profile.update', $data->user_id) }}" method="POST" enctype="multipart/form-data">
+      @csrf
+      {{-- @method('PUT') --}}
       <div class="flex gap-4">
-        <div class="w-8/12">
+        <div class="w-6/12">
           <div class="mb-3">
             <label for="name_division" class="block mb-2">Name Division</label>
-            <input type="text" name="name_division" id="name_division" class="w-full rounded-xl">
+            <input type="text" name="name" id="name_division" class="w-full rounded-xl" value="{{ $data->name }}">
+            @error('name')
+              <small class="text-red-700">
+                {{ $message }}
+              </small>
+            @enderror
           </div>
           <div class="mb-3">
             <label for="description" class="block mb-2">Description</label>
-            <textarea name="description" id="description" cols="30" rows="6" class="w-full rounded-xl"></textarea>
+            <textarea name="description" id="description" cols="30" rows="6" class="w-full rounded-xl">{{ $data->description }}</textarea>
+            @error('description')
+              <small class="text-red-700">
+                {{ $message }}
+              </small>
+            @enderror
           </div>
           <div class="mb-3">
             <label for="guidebook_link" class="block mb-2">Guidebook Link</label>
-            <input type="text" name="guidebook_link" id="guidebook_link" class="w-full rounded-xl">
+            <input type="text" name="guidebook_link" id="guidebook_link" class="w-full rounded-xl"
+              value="{{ $data->guidebook_link }}">
+            @error('guidebook_link')
+              <small class="text-red-700">
+                {{ $message }}
+              </small>
+            @enderror
           </div>
 
           <div class="grid grid-cols-2 gap-4 mb-3">
             <div>
               <label for="logo" class="block mb-2">Logo</label>
-              <input type="file" name="logo" id="logo" class="w-full rounded-xl" onchange="previewFile()">
+              <input type="file" name="logo" id="logo" class="w-full rounded-xl" onchange="readLogo(this)"
+                value="{{ $data->logo }}">
+              @error('logo')
+                <small class="text-red-700">
+                  {{ $message }}
+                </small>
+              @enderror
             </div>
             <div>
               <label for="timeline" class="block mb-2">Timeline</label>
-              <input type="file" name="timeline" id="timeline" class="w-full rounded-xl">
+              <input type="file" name="timeline" id="timeline" class="w-full rounded-xl" onchange="readTimeline(this)"
+                value="{{ $data->timeline }}">
+              @error('timeline')
+                <small class="text-red-700">
+                  {{ $message }}
+                </small>
+              @enderror
             </div>
           </div>
 
         </div>
-        <div class="w-4/12">
-          <div class="mt-7">
-            <img src="{{ asset('assets/image/no-img-3.jpg') }}" alt=""
-              class="w-full border rounded-xl border-[#15616D]" id="previewImg">
+        <div class="w-3/12">
+          <div class="mt-7 bg-[#15616D] rounded-xl">
+            <img src="{{ asset('storage/logo/' . $data->logo) }}" alt=""
+              class="w-full border rounded-xl border-[#15616D]" id="previewLogo">
+          </div>
+
+        </div>
+        <div class="w-3/12">
+          <div class="mt-7 bg-[#15616D] rounded-xl">
+            <img src="{{ asset('storage/timeline/' . $data->timeline) }}" alt=""
+              class="w-full border rounded-xl border-[#15616D]" id="previewTimeline">
           </div>
         </div>
       </div>
@@ -85,23 +122,28 @@
 
   @push('js-custom')
     <script>
-      function previewFile() {
-        const preview = document.querySelector("#previewImg");
-        const file = document.querySelector("input[type=file]").files[0];
-        const reader = new FileReader();
+      function readLogo(input) {
+        let file = input.files[0];
+        let fileReader = new FileReader();
 
-        reader.addEventListener(
-          "load",
-          () => {
-            // convert image file to base64 string
-            preview.src = reader.result;
-          },
-          false,
-        );
+        fileReader.onload = function() {
+          let selectedImage = document.getElementById('previewLogo');
+          selectedImage.src = fileReader.result;
+        };
 
-        if (file) {
-          reader.readAsDataURL(file);
-        }
+        fileReader.readAsDataURL(file);
+      }
+
+      function readTimeline(input) {
+        let file = input.files[0];
+        let fileReader = new FileReader();
+
+        fileReader.onload = function() {
+          let selectedImage = document.getElementById('previewTimeline');
+          selectedImage.src = fileReader.result;
+        };
+
+        fileReader.readAsDataURL(file);
       }
     </script>
   @endpush
