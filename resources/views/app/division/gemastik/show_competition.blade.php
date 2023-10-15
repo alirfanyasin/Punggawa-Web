@@ -67,12 +67,12 @@
         @endif
         <div class="mt-10">
           @if ($data->registration_link != null)
-            <a href="{{ $data->registration_link }}"
+            <a href="{{ $data->registration_link }}" target="_blank"
               class="px-8 py-3 rounded-xl decoration-0 text-white bg-[#15616D] hover:bg-[#2a8996]">Registration Now</a>
           @endif
 
           @if ($data->guidebook_link != null)
-            <a href="{{ $data->guidebook_link }}"
+            <a href="{{ $data->guidebook_link }}" target="_blank"
               class="px-8 py-3 rounded-xl decoration-0 text-[#15616D] border border-[#15616D] hover:bg-[#15616D] hover:text-white">Guidebook</a>
           @endif
 
@@ -93,14 +93,26 @@
             class="fa-regular fa-pen-to-square"></i> Edit</a>
       </li>
       <li>
-        <a href="{{ route('division.competition.delete', $data->id) }}"
-          class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i
-            class="fa-regular fa-trash-can"></i> Delete</a>
+        <form action="{{ route('division.competition.delete', $data->id) }}" method="POST" class="w-full">
+          @csrf
+          @method('DELETE')
+          <button type="submit"
+            class="block w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i
+              class="fa-regular fa-trash-can"></i> Delete</button>
+        </form>
       </li>
-      <li>
-        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i
-            class="fa-regular fa-circle-check"></i> Done</a>
-      </li>
+      @if ($data->status == 'Active')
+        <li>
+          <form action="{{ route('division.competition.done', $data->id) }}" method="POST">
+            @csrf
+            @method('PATCH')
+            <button type="submit"
+              class="block w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i
+                class="fa-regular fa-circle-check"></i> Done</button>
+          </form>
+        </li>
+      @endif
+
     </ul>
   </div>
 

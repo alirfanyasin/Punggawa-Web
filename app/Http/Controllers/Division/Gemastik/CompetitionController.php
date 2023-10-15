@@ -29,6 +29,9 @@ class CompetitionController extends Controller
         return view('app.division.gemastik.create_competition');
     }
 
+    /**
+     * Valudation rules.
+     */
 
     public function validation()
     {
@@ -132,7 +135,7 @@ class CompetitionController extends Controller
         }
 
         $data->update($validatedData);
-        return redirect()->route('division.competition')->with('message', 'Update data successfuly');
+        return redirect()->route('division.competition')->with('message', 'Updated data successfuly');
     }
 
     /**
@@ -140,6 +143,20 @@ class CompetitionController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data = Competition::findOrFail($id);
+        $data->delete();
+        Storage::delete('public/poster/' . $data->poster);
+        return redirect()->route('division.competition')->with('message', 'Deleted data successfuly');
+    }
+
+
+    /**
+     * Update status.
+     */
+
+    public function done(string $id)
+    {
+        Competition::where('id', $id)->update(['status' => 'Done']);
+        return redirect()->route('division.competition')->with('message', 'Updated status successfuly');
     }
 }
