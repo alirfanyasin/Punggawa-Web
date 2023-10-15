@@ -62,7 +62,8 @@ Route::middleware(['auth', 'role:division'])->group(function () {
     Route::get('/competition/{id}/show', [DivisionCompetitionController::class, 'show'])->name('division.competition.show');
     Route::get('/competition/{id}/edit', [DivisionCompetitionController::class, 'edit'])->name('division.competition.edit');
     Route::put('/competition/{id}/update', [DivisionCompetitionController::class, 'update'])->name('division.competition.update');
-    Route::get('/competition/{id}/delete', [DivisionCompetitionController::class, 'destroy'])->name('division.competition.delete');
+    Route::delete('/competition/{id}/delete', [DivisionCompetitionController::class, 'destroy'])->name('division.competition.delete');
+    Route::patch('/competition/{id}/done', [DivisionCompetitionController::class, 'done'])->name('division.competition.done');
     Route::get('/profile', [DivisionProfileController::class, 'index'])->name('division.profile');
     Route::post('/profile/update', [DivisionProfileController::class, 'update'])->name('division.profile.update');
   });

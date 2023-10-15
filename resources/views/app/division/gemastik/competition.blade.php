@@ -1,9 +1,9 @@
 @extends('layouts.app')
-@section('title', env('APP_NAME') . ' - Contest')
+@section('title', env('APP_NAME') . ' - Competition')
 @section('content')
   {{-- Breadcrumb start --}}
   <div class="flex justify-between breadcrumb">
-    <h3 class="font-semibold lg:text-2xl xs:text-md md:text-xl">Contest</h3>
+    <h3 class="font-semibold lg:text-2xl xs:text-md md:text-xl">Competition</h3>
     <nav class="flex" aria-label="Breadcrumb">
       <ol class="inline-flex items-center space-x-1 md:space-x-3">
         <li class="inline-flex items-center">
@@ -25,7 +25,7 @@
                 d="m1 9 4-4-4-4" />
             </svg>
             <a href="{{ route('division.competition') }}"
-              class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">Contest
+              class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">Competition
             </a>
           </div>
         </li>
@@ -76,18 +76,25 @@
       </div>
       <div id="tab2" hidden>
         <div class="grid gap-4 lg:grid-cols-4 md:grid-cols-2 xs:grid-cols-1">
-          <div class="bg-[#F4F2F2] p-5 rounded-xl relative">
-            <div class="w-full h-32 overflow-hidden rounded-xl">
-              <img src="{{ asset('assets/image/card-img.jpeg') }}" class="w-full" alt="">
-            </div>
-            <div class="mt-5">
-              <h4 class="font-semibold">Lomba Competitive Programming Gemastik 2023</h4>
-              <div class="flex items-center justify-between mt-7">
-                <span class="px-3 py-1 text-xs text-white bg-red-600 rounded-full">Done</span>
-                <span class="text-sm font-light">02 Januari 2023</span>
+          @foreach ($data as $item)
+            @if (Auth::user()->hasRole('division') && $item->user_id == Auth::user()->id && $item->status == 'Done')
+              <div class="bg-[#F4F2F2] p-5 rounded-xl relative">
+                <a href="{{ route('division.competition.show', $item->id) }}">
+                  <div class="w-full h-64 overflow-hidden rounded-xl">
+                    <img src="{{ asset('storage/poster/' . $item->poster) }}" class="w-full" alt="">
+                  </div>
+                  <div class="mt-5">
+                    <h4 class="font-semibold">{{ $item->name }}</h4>
+                    <div class="flex items-center justify-between mt-7 ">
+                      <span class="px-3 py-1 text-xs text-white bg-green-400 rounded-full">{{ $item->status }}</span>
+                      <span class="text-sm font-light">{{ date('d F Y', strtotime($item->start_date)) }}
+                      </span>
+                    </div>
+                  </div>
+                </a>
               </div>
-            </div>
-          </div>
+            @endif
+          @endforeach
         </div>
       </div>
     </div>
