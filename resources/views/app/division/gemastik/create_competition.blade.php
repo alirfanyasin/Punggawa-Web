@@ -92,20 +92,40 @@
             </div>
           </div>
 
-          <div class="mb-3">
-            <label for="poster" class="block mb-2">Poster</label>
-            <input type="file" name="poster" id="poster" class="w-full rounded-xl" onchange="previewFile()">
-            @error('poster')
-              <small class="text-red-700">
-                {{ $message }}
-              </small>
-            @enderror
+          <div class="grid grid-cols-2 gap-4 mb-3">
+            <div>
+              <label for="category" class="block mb-2">Category</label>
+              <select name="category" id="category" class="rounded-xl">
+                <option selected disabled>-- Choose --</option>
+                <option value="Programming">Programming</option>
+                <option value="Cyber Security">Cyber Security</option>
+                <option value="Data Mining">Data Mining</option>
+                <option value="UX Design">UX Design</option>
+                <option value="Animation">Animation</option>
+                <option value="Smart City">Smart City</option>
+                <option value="ICT Scientific Paper">ICT Scientific Paper</option>
+                <option value="Software Development">Software Development</option>
+                <option value="Smart Device, Embedded System & IoT">Smart Device, Embedded System & IoT</option>
+                <option value="ICT Bussiness Development">ICT Bussiness Development</option>
+                <option value="Game Development">Game Development</option>
+              </select>
+            </div>
+            <div>
+              <label for="poster" class="block mb-2">Poster</label>
+              <input type="file" name="poster" id="poster" class="w-full rounded-xl" onchange="previewFile()">
+              @error('poster')
+                <small class="text-red-700">
+                  {{ $message }}
+                </small>
+              @enderror
+            </div>
           </div>
 
         </div>
         <div class="w-4/12">
           <div class="mt-7">
-            <img src="{{ asset('assets/image/no-img-2.jpg') }}" alt="" class="w-full rounded-xl" id="previewImg">
+            <img src="{{ asset('assets/image/no-img-2.jpg') }}" alt="" class="w-full rounded-xl"
+              id="previewImg">
           </div>
         </div>
       </div>
