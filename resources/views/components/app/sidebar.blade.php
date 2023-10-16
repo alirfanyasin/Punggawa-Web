@@ -13,7 +13,7 @@
         @endif
       </li>
       <li class="text-[#15616D] font-semibold  hover:font-bold mb-3">
-        @if (Request::is('competition'))
+        @if (Request::is('competition') || Request::is('competition/*'))
           <a href="{{ route('competition') }}" class="flex items-center px-8 py-3">
             <img src="{{ asset('assets/image/icon/icon-trophy-solid.png') }}" class="mr-3 w-7 h-7"
               alt="">Competition</a>
@@ -133,4 +133,10 @@
       </li>
     </ul>
   @endhasrole
+
+  <center>
+    <div class="absolute bottom-0 mx-20 mb-10">
+      <p class="text-center text-slate-400">V1.0.25</p>
+    </div>
+  </center>
 </aside>

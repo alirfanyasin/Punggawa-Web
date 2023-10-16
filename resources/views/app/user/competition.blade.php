@@ -36,13 +36,20 @@
   {{-- Wrapper start --}}
   <section id="wrapper" class="h-screen mt-8">
     <div class="">
-      <div class="mb-10 tab-button">
-        <a href="#" class="px-8 py-2 border rounded-full border-2-outline bg-slate-200 hover:bg-slate-200"
-          id="btn-all">All</a>
-        <a href="#" class="px-8 py-2 border rounded-full border-2-outline hover:bg-slate-200"
-          id="btn-finish">Finish</a>
+      <div class="flex items-center justify-between mb-10">
+        <div class="tab-button">
+          <a href="#" class="px-8 py-2 border rounded-full border-2-outline bg-slate-200 hover:bg-slate-200"
+            id="btn-all">Active</a>
+          <a href="#" class="px-8 py-2 border rounded-full border-2-outline hover:bg-slate-200"
+            id="btn-finish">Done</a>
+        </div>
+        <div>
+          <div class="relative w-100">
+            <i class="absolute fa-solid fa-magnifying-glass text-slate-400 top-3.5 left-3"></i>
+            <input type="search" name="search" class="pl-10 border rounded-full ">
+          </div>
+        </div>
       </div>
-
       <div id="tab1">
         <div class="grid gap-4 lg:grid-cols-4 md:grid-cols-2 xs:grid-cols-1">
           @foreach ($data as $item)
@@ -68,17 +75,25 @@
       </div>
       <div id="tab2" hidden>
         <div class="grid gap-4 lg:grid-cols-4 md:grid-cols-2 xs:grid-cols-1">
-          <div class="bg-[#F4F2F2] p-5 rounded-xl relative">
-            <div class="w-full h-32 overflow-hidden rounded-xl">
-              <img src="{{ asset('assets/image/card-img.jpeg') }}" class="w-full" alt="">
-            </div>
-            <div class="mt-5">
-              <h4 class="font-semibold">Lomba Competitive Programming Gemastik 2023</h4>
-              <div class="flex items-center justify-end mt-7">
-                <span class="text-sm font-light">02 Januari 2023</span>
+          @foreach ($data as $item)
+            @if (Auth::user()->hasRole('user') && $item->status == 'Done')
+              <div class="bg-[#F4F2F2] p-5 rounded-xl relative">
+                <a href="{{ route('competition.show', $item->id) }}">
+                  <div class="w-full h-64 overflow-hidden rounded-xl">
+                    <img src="{{ asset('storage/poster/' . $item->poster) }}" class="w-full" alt="">
+                  </div>
+                  <div class="mt-5">
+                    <h4 class="font-semibold">{{ $item->name }}</h4>
+                    <div class="flex items-center justify-between mt-7 ">
+                      <span class="px-3 py-1 text-xs text-white bg-green-400 rounded-full">{{ $item->status }}</span>
+                      <span class="text-sm font-light">{{ date('d F Y', strtotime($item->start_date)) }}
+                      </span>
+                    </div>
+                  </div>
+                </a>
               </div>
-            </div>
-          </div>
+            @endif
+          @endforeach
         </div>
       </div>
 
