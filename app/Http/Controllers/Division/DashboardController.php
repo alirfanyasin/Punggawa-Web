@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Division\Gemastik;
+namespace App\Http\Controllers\Division;
 
 use App\Charts\BootcampChart;
 use App\Charts\ParticipationChart;

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Competition;
 use Illuminate\Http\Request;
 
 class CompetitionController extends Controller
@@ -12,7 +13,9 @@ class CompetitionController extends Controller
      */
     public function index()
     {
-        return view('app.user.competition');
+        return view('app.user.competition', [
+            'data' => Competition::all()
+        ]);
     }
 
     /**
@@ -36,7 +39,9 @@ class CompetitionController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('app.user.show_competition', [
+            'data' => Competition::findOrFail($id)
+        ]);
     }
 
     /**

@@ -5,9 +5,9 @@ use App\Http\Controllers\SuperAdmin\AcademicAdvisorController as SuperAdminAcade
 use App\Http\Controllers\SuperAdmin\InvoiceController as SuperAdminInvoiceController;
 use App\Http\Controllers\SuperAdmin\AccountController as SuperAdminAccountController;
 use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\Division\Gemastik\CompetitionController as DivisionCompetitionController;
-use App\Http\Controllers\Division\Gemastik\ProfileController as DivisionProfileController;
-use App\Http\Controllers\Division\Gemastik\DashboardController as DivisionDashboardController;
+use App\Http\Controllers\Division\CompetitionController as DivisionCompetitionController;
+use App\Http\Controllers\Division\ProfileController as DivisionProfileController;
+use App\Http\Controllers\Division\DashboardController as DivisionDashboardController;
 use App\Http\Controllers\User\DashboardController as UserDashboardController;
 use App\Http\Controllers\User\CompetitionController as UserCompetitionController;
 use App\Http\Controllers\User\AcademicAdvisorController as UserAcademicAdvisorController;
@@ -44,6 +44,7 @@ Route::middleware('guest')->group(function () {
 Route::middleware(['auth', 'role:user'])->group(function () {
   Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('dashboard');
   Route::get('/competition', [UserCompetitionController::class, 'index'])->name('competition');
+  Route::get('competition/{id}/show', [UserCompetitionController::class, 'show'])->name('competition.show');
   Route::get('/academic-advisor', [UserAcademicAdvisorController::class, 'index'])->name('academic-advisor');
   Route::get('/invoice', [UserInvoiceController::class, 'index'])->name('invoice');
 });

@@ -45,30 +45,25 @@
 
       <div id="tab1">
         <div class="grid gap-4 lg:grid-cols-4 md:grid-cols-2 xs:grid-cols-1">
-          <div class="bg-[#F4F2F2] p-5 rounded-xl relative">
-            <div class="w-full h-32 overflow-hidden rounded-xl">
-              <img src="{{ asset('assets/image/card-img.jpeg') }}" class="w-full" alt="">
-            </div>
-            <div class="mt-5">
-              <h4 class="font-semibold">Lomba Competitive Programming Gemastik 2023</h4>
-              <div class="flex items-center justify-between mt-7">
-                <span class="px-3 py-1 text-xs text-white rounded-full bg-[#15616D]">GEMASTIK</span>
-                <span class="text-sm font-light">02 Januari 2023</span>
+          @foreach ($data as $item)
+            @if (Auth::user()->hasRole('user') && $item->status == 'Active')
+              <div class="bg-[#F4F2F2] p-5 rounded-xl relative">
+                <a href="{{ route('competition.show', $item->id) }}">
+                  <div class="w-full h-64 overflow-hidden rounded-xl">
+                    <img src="{{ asset('storage/poster/' . $item->poster) }}" class="w-full" alt="">
+                  </div>
+                  <div class="mt-5">
+                    <h4 class="font-semibold">{{ $item->name }}</h4>
+                    <div class="flex items-center justify-between mt-7 ">
+                      <span class="px-3 py-1 text-xs text-white rounded-full bg-[#15616D]">{{ $item->status }}</span>
+                      <span class="text-sm font-light">{{ date('d F Y', strtotime($item->start_date)) }}
+                      </span>
+                    </div>
+                  </div>
+                </a>
               </div>
-            </div>
-          </div>
-          <div class="bg-[#F4F2F2] p-5 rounded-xl relative">
-            <div class="w-full h-32 overflow-hidden rounded-xl">
-              <img src="{{ asset('assets/image/card-img.jpeg') }}" class="w-full" alt="">
-            </div>
-            <div class="mt-5">
-              <h4 class="font-semibold">Lomba Competitive Programming Gemastik 2023</h4>
-              <div class="flex items-center justify-between mt-7">
-                <span class="px-3 py-1 text-xs text-white rounded-full bg-[#15616D]">PKM</span>
-                <span class="text-sm font-light">02 Januari 2023</span>
-              </div>
-            </div>
-          </div>
+            @endif
+          @endforeach
         </div>
       </div>
       <div id="tab2" hidden>

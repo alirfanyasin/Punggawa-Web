@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Division\Gemastik;
+namespace App\Http\Controllers\Division;
 
 use App\Http\Controllers\Controller;
 use App\Models\Competition;
