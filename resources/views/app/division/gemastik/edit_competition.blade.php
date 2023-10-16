@@ -93,15 +93,41 @@
             </div>
           </div>
 
-          <div class="mb-3">
-            <label for="poster" class="block mb-2">Poster</label>
-            <input type="file" name="poster" id="poster" class="w-full rounded-xl" onchange="previewFile()"
-              value="{{ $data->poster }}">
-            @error('poster')
-              <small class="text-red-700">
-                {{ $message }}
-              </small>
-            @enderror
+          <div class="grid grid-cols-2 gap-4 mb-3">
+            <div>
+              <label for="category" class="block mb-2">Category</label>
+              <select name="category" id="category" class="rounded-xl">
+                <option value="Programming" {{ $data->category == 'Programming' ? 'selected' : '' }}>Programming</option>
+                <option value="Cyber Security" {{ $data->category == 'Cyber Security' ? 'selected' : '' }}>Cyber Security
+                </option>
+                <option value="Data Mining" {{ $data->category == 'Data Mining' ? 'selected' : '' }}>Data Mining</option>
+                <option value="UX Design" {{ $data->category == 'UX Design' ? 'selected' : '' }}>UX Design</option>
+                <option value="Animation" {{ $data->category == 'UX Design' ? 'selected' : '' }}>Animation</option>
+                <option value="Smart City" {{ $data->category == 'Smart City' ? 'selected' : '' }}>Smart City</option>
+                <option value="ICT Scientific Paper" {{ $data->category == 'ICT Scientific Paper' ? 'selected' : '' }}>
+                  ICT Scientific Paper</option>
+                <option value="Software Development" {{ $data->category == 'Software Development' ? 'selected' : '' }}>
+                  Software Development</option>
+                <option value="Smart Device, Embedded System & IoT"
+                  {{ $data->category == 'Smart Device, Embedded System & IoT' ? 'selected' : '' }}>Smart Device, Embedded
+                  System & IoT</option>
+                <option value="ICT Bussiness Development"
+                  {{ $data->category == 'ICT Bussiness Development' ? 'selected' : '' }}>ICT Bussiness Development
+                </option>
+                <option value="Game Development" {{ $data->category == 'Game Development' ? 'selected' : '' }}>Game
+                  Development</option>
+              </select>
+            </div>
+            <div>
+              <label for="poster" class="block mb-2">Poster</label>
+              <input type="file" name="poster" id="poster" class="w-full rounded-xl" onchange="previewFile()"
+                value="{{ $data->poster }}">
+              @error('poster')
+                <small class="text-red-700">
+                  {{ $message }}
+                </small>
+              @enderror
+            </div>
           </div>
 
         </div>

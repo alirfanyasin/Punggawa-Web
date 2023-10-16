@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('end_date')->nullable();
             $table->string('guidebook_link')->nullable();
             $table->string('registration_link')->nullable();
+            $table->string('category');
             $table->string('poster');
             $table->string('status');
             $table->timestamps();

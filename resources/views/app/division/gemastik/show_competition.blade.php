@@ -65,6 +65,9 @@
             <p>{{ date('d F Y', strtotime($data->end_date)) }}</p>
           </div>
         @endif
+        <h4 class="text-lg font-semibold">Kategori</h4>
+        <p>{{ $data->category }}</p>
+
         <div class="mt-10">
           @if ($data->registration_link != null)
             <a href="{{ $data->registration_link }}" target="_blank"

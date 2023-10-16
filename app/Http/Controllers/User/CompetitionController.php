@@ -14,7 +14,7 @@ class CompetitionController extends Controller
     public function index()
     {
         return view('app.user.competition', [
-            'data' => Competition::all()
+            'data' => Competition::orderBy('id', 'DESC')->get()
         ]);
     }
 

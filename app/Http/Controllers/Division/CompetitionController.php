@@ -53,7 +53,8 @@ class CompetitionController extends Controller
             'name' => 'required',
             'description' => 'required',
             'start_date' => 'required',
-            'poster' => 'required|image|mimes:jpeg,png,jpg|max:2048'
+            'poster' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'category' => 'required'
         ];
 
         return $rules;
@@ -120,6 +121,7 @@ class CompetitionController extends Controller
         $validatedData['end_date'] = $request->end_date;
         $validatedData['guidebook_link'] = $request->guidebook_link;
         $validatedData['registration_link'] = $request->registration_link;
+        $validatedData['category'] = $request->category;
         $validatedData['status'] = 'Active';
 
         if ($request->hasFile('poster')) {

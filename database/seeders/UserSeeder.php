@@ -16,31 +16,31 @@ class UserSeeder extends Seeder
     {
         $division = [
             [
-                'name' => 'Division Gemastik',
+                'name' => 'Gemastik',
                 'email' => 'divisiongemastik@gmail.com',
                 'password' => Hash::make('password'),
                 'nim' => '0000000002'
             ],
             [
-                'name' => 'Division PKM',
+                'name' => 'PKM',
                 'email' => 'divisionpkm@gmail.com',
                 'password' => Hash::make('password'),
                 'nim' => '0000000003'
             ],
             [
-                'name' => 'Division MAWAPRES',
+                'name' => 'MAWAPRES',
                 'email' => 'divisionmawapres@gmail.com',
                 'password' => Hash::make('password'),
                 'nim' => '0000000004'
             ],
             [
-                'name' => 'Division Data Ethusiast',
+                'name' => 'Data Ethusiast',
                 'email' => 'divisiondataethusiast@gmail.com',
                 'password' => Hash::make('password'),
                 'nim' => '0000000005'
             ],
             [
-                'name' => 'Division Creative',
+                'name' => 'Creative',
                 'email' => 'divisioncreative@gmail.com',
                 'password' => Hash::make('password'),
                 'nim' => '0000000006'
