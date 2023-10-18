@@ -47,7 +47,7 @@
               Profile</p>
             <div class="w-full h-4 mt-2 mb-4 bg-gray-200 rounded-full dark:bg-gray-700">
               <div class="h-4 bg-[#15616D] rounded-full dark:bg-blue-500 text-white text-xs text-center"
-                style="width: 45%">45%</div>
+                style="width: 30%">30%</div>
             </div>
           </div>
           <div class="flex justify-end lg:w-1/2 xs:w-4/12">
