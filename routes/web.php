@@ -47,6 +47,8 @@ Route::middleware(['auth', 'role:user'])->group(function () {
   Route::get('competition/{id}/show', [UserCompetitionController::class, 'show'])->name('competition.show');
   Route::get('/academic-advisor', [UserAcademicAdvisorController::class, 'index'])->name('academic-advisor');
   Route::get('/invoice', [UserInvoiceController::class, 'index'])->name('invoice');
+  Route::get('/invoice/create', [UserInvoiceController::class, 'create'])->name('invoice.create');
+  Route::get('/invoice/selected/{id}', [UserInvoiceController::class, 'selected'])->name('invoice.selected');
 });
 
 // Route Super Admin

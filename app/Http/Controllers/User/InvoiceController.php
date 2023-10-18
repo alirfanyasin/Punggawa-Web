@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Competition;
 use Illuminate\Http\Request;
 
 class InvoiceController extends Controller
@@ -20,7 +21,9 @@ class InvoiceController extends Controller
      */
     public function create()
     {
-        //
+        return view('app.user.create_invoice', [
+            'data' => Competition::where('status', 'Active')->get(),
+        ]);
     }
 
     /**
@@ -61,5 +64,14 @@ class InvoiceController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+
+    public function selected($id)
+    {
+        // $dataSelected = Competition::findOrFail($id);
+        $dataSelected = Competition::with('user')->findOrFail($id);
+
+        return response()->json(['dataSelected' => $dataSelected]);
     }
 }
