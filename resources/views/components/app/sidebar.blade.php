@@ -35,7 +35,7 @@
         @endif
       </li>
       <li class="text-[#15616D] font-semibold  hover:font-bold mb-3">
-        @if (Request::is('invoice'))
+        @if (Request::is('invoice') || Request::is('invoice/*'))
           <a href="{{ route('invoice') }}" class="flex items-center px-8 py-3">
             <img src="{{ asset('assets/image/icon/icon-invoice-solid.png') }}" class="mr-3 w-7 h-7"
               alt="">Invoice</a>

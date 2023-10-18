@@ -16,13 +16,18 @@
     content="Punggawa adalah sebuah organisasi untuk menampung lomba-lomba untuk mahasiswa IT Telkom Surabaya.">
 
   <title>@yield('title')</title>
+
   {{-- Style CSS | Tailwind CSS and Flowbite --}}
   @vite(['resources/css/app.css', 'resources/js/app.js'])
+  {{-- JQuery --}}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   {{-- CSS Custom --}}
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
   {{-- CDN Font awesome --}}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   @stack('css-custom')
+
+
 </head>
 
 <body>

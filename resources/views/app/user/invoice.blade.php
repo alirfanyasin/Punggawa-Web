@@ -1,5 +1,20 @@
 @extends('layouts.app')
 @section('title', env('APP_NAME') . ' - Invoice')
+@push('css-custom')
+  {{-- <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" /> --}}
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.tailwindcss.min.css">
+  <style>
+    input.border.placeholder-gray-500,
+    select.border.px-3.py-2.rounded-lg,
+    .dataTables_paginate .text-center a {
+      background: white;
+    }
+
+    thead {
+      background: #15616D;
+    }
+  </style>
+@endpush
 @section('content')
   {{-- Breadcrumb start --}}
   <div class="flex justify-between breadcrumb">
@@ -36,13 +51,74 @@
   {{-- Wrapper start --}}
   <section id="wrapper" class="h-screen mt-8">
     <div class="">
-      <div class="mb-10 tab-button">
-        <a href="#" class="px-8 py-2 border rounded-full border-2-outline bg-slate-200 hover:bg-slate-200"
-          id="btn-all">All</a>
-        <a href="#" class="px-8 py-2 border rounded-full border-2-outline hover:bg-slate-200"
-          id="btn-finish">Finish</a>
+      <div class="flex justify-between">
+        <div class="mb-10 tab-button">
+          <a href="#" class="px-8 py-2 border rounded-full border-2-outline bg-slate-200 hover:bg-slate-200"
+            id="btn-all">All</a>
+          <a href="#" class="px-8 py-2 border rounded-full border-2-outline hover:bg-slate-200"
+            id="btn-finish">Finish</a>
+        </div>
+        <div>
+          <a href="{{ route('invoice.create') }}"
+            class="px-8 py-2 rounded-full text-white bg-[#15616D] hover:bg-[#2a8996]" id="btn-all">Add
+            Invoice</a>
+        </div>
       </div>
 
+      <table id="example" class="display" style="width:100%">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama Lengkap</th>
+            <th>Lomba</th>
+            <th>Kategori</th>
+            <th>Dana</th>
+            <th>Status</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white">
+          <tr>
+            <td>Tiger Nixon</td>
+            <td>System Architect</td>
+            <td>Edinburgh</td>
+            <td>61</td>
+            <td>2011-04-25</td>
+            <td>$320,800</td>
+            <td>
+              <a href="" class="px-5 py-1 bg-[#15616D] rounded-xl text-white">Lihat</a>
+              <a href="" class="px-5 py-1 bg-black text-white rounded-xl">Cetak</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Tiger Nixon</td>
+            <td>System Architect</td>
+            <td>Edinburgh</td>
+            <td>61</td>
+            <td>2011-04-25</td>
+            <td>$320,800</td>
+            <td>
+              <a href="" class="px-5 py-1 bg-[#15616D] rounded-xl text-white">Lihat</a>
+              <a href="" class="px-5 py-1 bg-black text-white rounded-xl">Cetak</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Tiger Nixon</td>
+            <td>System Architect</td>
+            <td>Edinburgh</td>
+            <td>61</td>
+            <td>2011-04-25</td>
+            <td>$320,800</td>
+            <td>
+              <a href="" class="px-5 py-1 bg-[#15616D] rounded-xl text-white">Lihat</a>
+              <a href="" class="px-5 py-1 bg-black text-white rounded-xl">Cetak</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      {{-- 
       <div id="tab1">
         <div class="grid gap-4 lg:grid-cols-4 md:grid-cols-2 xs:grid-cols-1">
           <div class="bg-[#F4F2F2] p-5 rounded-xl relative">
@@ -85,7 +161,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> --}}
 
     </div>
   </section>
@@ -95,6 +171,10 @@
 
   @push('js-custom')
     <script>
+      // new DataTable('#example');
+      $(document).ready(function() {
+        $('#example').DataTable();
+      });
       var btnAll = document.querySelector('#btn-all');
       var btnFinish = document.querySelector('#btn-finish');
       var tab1 = document.querySelector('#tab1');
@@ -117,5 +197,8 @@
         tab2.removeAttribute('hidden');
       })
     </script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.tailwindcss.min.js"></script>
+    <script src="https://cdn.tailwindcss.com/"></script>
   @endpush
 @endsection
