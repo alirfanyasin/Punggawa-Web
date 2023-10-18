@@ -22,18 +22,20 @@
       <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
           <li>
-            <a href="#"
-              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+            <a href="{{ route('account.setting') }}"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i
+                class="fa-regular fa-user"></i>&nbsp; Account</a>
           </li>
-          <li>
-            <a href="#"
-              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Activity Log</a>
-          </li>
+          {{-- <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i
+                class="fa-solid fa-gear"></i>&nbsp; Activity Log</a>
+          </li> --}}
           <li>
             <form action="{{ route('logout') }}" method="POST" class="inline">
               @csrf
               <button
-                class="block w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logout</button>
+                class="block w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i
+                  class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp; Logout</button>
             </form>
 
           </li>

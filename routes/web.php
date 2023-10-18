@@ -12,6 +12,7 @@ use App\Http\Controllers\User\DashboardController as UserDashboardController;
 use App\Http\Controllers\User\CompetitionController as UserCompetitionController;
 use App\Http\Controllers\User\AcademicAdvisorController as UserAcademicAdvisorController;
 use App\Http\Controllers\User\InvoiceController as UserInvoiceController;
+use App\Http\Controllers\User\AccountSetting as UserAccountSetting;
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\LandingPageController;
 use Illuminate\Support\Facades\Route;
@@ -49,6 +50,9 @@ Route::middleware(['auth', 'role:user'])->group(function () {
   Route::get('/invoice', [UserInvoiceController::class, 'index'])->name('invoice');
   Route::get('/invoice/create', [UserInvoiceController::class, 'create'])->name('invoice.create');
   Route::get('/invoice/selected/{id}', [UserInvoiceController::class, 'selected'])->name('invoice.selected');
+  // Account.
+  Route::get('/my/account', [UserAccountSetting::class, 'index'])->name('account.setting');
+  Route::patch('/account/update', [UserAccountSetting::class, 'update'])->name('account.update');
 });
 
 // Route Super Admin
