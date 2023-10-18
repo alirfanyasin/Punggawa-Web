@@ -23,9 +23,6 @@ class AccountSetting extends Controller
         $id = (int)$request->id;
         $data = User::findOrFail($id);
 
-
-
-
         $validation = $request->validate([
             'name' => 'required',
             'email' => 'required',
