@@ -58,13 +58,14 @@ class AuthController extends Controller
         $validate = $request->validate([
             'name' => 'required',
             'email' => 'required|unique:users',
-            'password' => 'required',
+            'password' => 'required|min:6',
             'nim' => 'required'
         ], [
             'name.required' => 'Nama wajib diisi',
             'email.required' => 'Email wajib diisi',
             'email.unique' => 'Email sudah digunakan',
-            'password' => 'Password wajib diisi',
+            'password.required' => 'Password wajib diisi',
+            'password.min' => 'Password minimal 6 karakter',
             'nim' => 'NIM wajib diisi'
         ]);
 

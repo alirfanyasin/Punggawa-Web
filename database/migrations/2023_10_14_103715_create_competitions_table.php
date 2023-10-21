@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('guidebook_link')->nullable();
             $table->string('registration_link')->nullable();
             $table->string('category');
+            $table->unsignedBigInteger("fund")->nullable();
+            $table->string("no_rek")->nullable();
             $table->string('poster');
             $table->string('status');
             $table->timestamps();
