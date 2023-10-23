@@ -37,18 +37,25 @@
   <section id="wrapper" class="h-screen mt-8">
     <div class="flex justify-between gap-5">
       <div class="w-7/12">
-        <div class="mb-4">
-          <label for="select_competition">Pilih Lomba</label>
-          <select name="" id="select_competition" class="block w-full mt-2 rounded-xl" onchange="getValue()">
-            <option selected disabled>-- Choose --</option>
-            @foreach ($data as $competition)
-              @if ($competition->fund != null)
-                <option value="{{ $competition->id }}">{{ $competition->name }} -
-                  {{ $competition->user->name }}</option>
-              @endif
-            @endforeach
-          </select>
-        </div>
+        <form action="{{ route('invoice.store') }}" method="POST">
+          @csrf
+          <div class="mb-4">
+            <label for="select_competition">Pilih Lomba</label>
+            <select name="competition_id" id="select_competition" class="block w-full mt-2 rounded-xl"
+              onchange="getValue()">
+              <option selected disabled>-- Choose --</option>
+              @foreach ($data as $competition)
+                @if ($competition->fund != null)
+                  <option value="{{ $competition->id }}">{{ $competition->name }} -
+                    {{ $competition->user->name }}</option>
+                @endif
+              @endforeach
+            </select>
+          </div>
+          <div class="mb-4">
+            <button type="submit" class="px-8 py-2 rounded-xl text-white bg-[#15616D] hover:bg-[#2a8996]">Submit</button>
+          </div>
+        </form>
       </div>
       <div class="w-5/12">
         <label for="">Preview</label>
