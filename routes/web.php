@@ -50,6 +50,8 @@ Route::middleware(['auth', 'role:user'])->group(function () {
   Route::get('/invoice', [UserInvoiceController::class, 'index'])->name('invoice');
   Route::get('/invoice/create', [UserInvoiceController::class, 'create'])->name('invoice.create');
   Route::get('/invoice/selected/{id}', [UserInvoiceController::class, 'selected'])->name('invoice.selected');
+  Route::post('/invoice/submit', [UserInvoiceController::class, 'store'])->name('invoice.store');
+
   // Account.
   Route::get('/my/account', [UserAccountSetting::class, 'index'])->name('account.setting');
   Route::patch('/account/update', [UserAccountSetting::class, 'update'])->name('account.update');

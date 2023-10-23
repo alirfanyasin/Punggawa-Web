@@ -57,17 +57,18 @@
             <p class="inline py-1 text-xl bg-green-300 rounded-lg px-7">Gratis Biaya Pendaftaran</p>
           </div>
         @endif
-
-        <div class="mb-5">
-          <h4 class="text-lg font-semibold">Dimulai pada tanggal</h4>
-          <p>{{ date('d F Y', strtotime($data->start_date)) }}</p>
-        </div>
-        @if ($data->end_date != null)
-          <div class="mb-5">
-            <h4 class="text-lg font-semibold">Berakhir pada tanggal</h4>
-            <p>{{ date('d F Y', strtotime($data->end_date)) }}</p>
+        <div class="flex">
+          <div class="mb-5 mr-10">
+            <h4 class="text-lg font-semibold">Dimulai pada tanggal</h4>
+            <p>{{ date('d F Y', strtotime($data->start_date)) }}</p>
           </div>
-        @endif
+          @if ($data->end_date != null)
+            <div class="mb-5">
+              <h4 class="text-lg font-semibold">Berakhir pada tanggal</h4>
+              <p>{{ date('d F Y', strtotime($data->end_date)) }}</p>
+            </div>
+          @endif
+        </div>
         <h4 class="text-lg font-semibold">Kategori</h4>
         <p>{{ $data->user->name . ' - ' . $data->category }}</p>
 

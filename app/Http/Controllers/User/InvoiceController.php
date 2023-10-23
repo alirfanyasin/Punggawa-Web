@@ -4,7 +4,9 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Competition;
+use App\Models\RequestForFund;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class InvoiceController extends Controller
 {
@@ -31,7 +33,13 @@ class InvoiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = [
+            'user_id' => Auth::user()->id,
+            'competition_id' => $request->competition_id
+        ];
+
+        RequestForFund::create($data);
+        return redirect()->route('invoice')->with('message', 'Request successfuly');
     }
 
     /**
