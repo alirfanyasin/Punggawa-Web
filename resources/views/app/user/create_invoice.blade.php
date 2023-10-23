@@ -129,9 +129,6 @@
           $('.kategori-lomba').text(response.dataSelected.category);
           $('.biaya').text(response.dataSelected.fund);
           $('.no_rek').text(response.dataSelected.no_rek);
-
-          // Perbarui elemen HTML dengan data yang diterima
-          // $('.biaya').text('Rp. ' + response.dataSelected.fund);
         },
         error: function(res) {
           alert('error')
