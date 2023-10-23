@@ -38,27 +38,24 @@
     <div class="flex justify-between gap-5">
       <div class="w-7/12">
         <div class="mb-4">
-          <label for="select_competition">Select Competition</label>
-          <select name="" id="select_competition" class="block mt-2 rounded-xl w-full" onchange="getValue()">
+          <label for="select_competition">Pilih Lomba</label>
+          <select name="" id="select_competition" class="block w-full mt-2 rounded-xl" onchange="getValue()">
             <option selected disabled>-- Choose --</option>
             @foreach ($data as $competition)
-              <option value="{{ $competition->id }}">{{ $competition->name }} -
-                {{ $competition->category }} -
-                {{ $competition->user->name }}</option>
+              @if ($competition->fund != null)
+                <option value="{{ $competition->id }}">{{ $competition->name }} -
+                  {{ $competition->user->name }}</option>
+              @endif
             @endforeach
           </select>
-        </div>
-        <div class="mb-4">
-          <label for="fund">Fund</label>
-          <input type="number" class="rounded-xl block mt-2 w-full" name="fund" placeholder="Rp. 250.000">
         </div>
       </div>
       <div class="w-5/12">
         <label for="">Preview</label>
-        <div class="rounded-xl border w-full overflow-hidden mt-2">
+        <div class="w-full mt-2 overflow-hidden border rounded-xl">
           <header class="text-center bg-[#15616D] text-white py-3">
-            <h1 class="pt-7 text-center text-5xl font-semibold">Invoice</h1>
-            <p class="font-semibold text-lg">Punggawa <span class="text-yellow-400">Inspratif</span></p>
+            <h1 class="text-5xl font-semibold text-center pt-7">Invoice</h1>
+            <p class="text-lg font-semibold">Punggawa <span class="text-yellow-400">Inspratif</span></p>
           </header>
           <div class="p-10">
             <table>
@@ -72,11 +69,6 @@
                 <td>:</td>
                 <td>{{ Auth::user()->nim }}</td>
               </tr>
-              {{-- <tr>
-                <td class="font-semibold">Prodi</td>
-                <td>:</td>
-                <td>{{ Auth::user()->nim }}</td>
-              </tr> --}}
               <tr>
                 <td class="font-semibold">Nama Lomba</td>
                 <td>:</td>
@@ -92,10 +84,15 @@
                 <td>:</td>
                 <td class="biaya">-</td>
               </tr>
+              <tr>
+                <td class="font-semibold">No Rekening</td>
+                <td>:</td>
+                <td class="no_rek">-</td>
+              </tr>
             </table>
 
             <div class="mt-20 text-center me-0">
-              <p class="mb-20">Surabaya, 20 Oktober 2023</p>
+              <p class="mb-20">Surabaya, {{ date('d F Y') }}</p>
               <p class="font-semibold">Nama Dosen</p>
               <p class="">Kemahasiswaan</p>
             </div>
@@ -123,6 +120,8 @@
           console.log('success');
           $('.nama-lomba').text(response.dataSelected.name);
           $('.kategori-lomba').text(response.dataSelected.category);
+          $('.biaya').text(response.dataSelected.fund);
+          $('.no_rek').text(response.dataSelected.no_rek);
 
           // Perbarui elemen HTML dengan data yang diterima
           // $('.biaya').text('Rp. ' + response.dataSelected.fund);

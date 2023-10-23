@@ -55,16 +55,31 @@
           </button>
         </div>
         <p class="my-5">{{ $data->description }}</p>
-        <div class="mb-5">
-          <h4 class="text-lg font-semibold">Dimulai pada tanggal</h4>
-          <p>{{ date('d F Y', strtotime($data->start_date)) }}</p>
-        </div>
-        @if ($data->end_date != null)
-          <div class="mb-5">
-            <h4 class="text-lg font-semibold">Berakhir pada tanggal</h4>
-            <p>{{ date('d F Y', strtotime($data->end_date)) }}</p>
+
+        @if ($data->fund != null)
+          <div class="mb-7">
+            <h2 class="mb-2 text-2xl">Rp. {{ number_format($data->fund, 0, ',', '.') }}</h2>
+            <span>No. Rek ({{ substr($data->no_rek, 0, 8) . 'xxxxx' }})</span>
+          </div>
+        @else
+          <div class="mb-7">
+            <p class="inline py-1 text-xl bg-green-300 rounded-lg px-7">Gratis Biaya Pendaftaran</p>
           </div>
         @endif
+
+        <div class="flex">
+          <div class="mb-5 mr-10">
+            <h4 class="text-lg font-semibold">Dimulai pada tanggal</h4>
+            <p>{{ date('d F Y', strtotime($data->start_date)) }}</p>
+          </div>
+          @if ($data->end_date != null)
+            <div class="mb-5">
+              <h4 class="text-lg font-semibold">Berakhir pada tanggal</h4>
+              <p>{{ date('d F Y', strtotime($data->end_date)) }}</p>
+            </div>
+          @endif
+        </div>
+
         <h4 class="text-lg font-semibold">Kategori</h4>
         <p>{{ $data->category }}</p>
 
