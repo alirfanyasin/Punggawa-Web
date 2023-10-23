@@ -87,7 +87,7 @@
             <td>$320,800</td>
             <td>
               <a href="" class="px-5 py-1 bg-[#15616D] rounded-xl text-white">Lihat</a>
-              <a href="" class="px-5 py-1 bg-black text-white rounded-xl">Cetak</a>
+              <a href="" class="px-5 py-1 text-white bg-black rounded-xl">Cetak</a>
             </td>
           </tr>
           <tr>
@@ -99,7 +99,7 @@
             <td>$320,800</td>
             <td>
               <a href="" class="px-5 py-1 bg-[#15616D] rounded-xl text-white">Lihat</a>
-              <a href="" class="px-5 py-1 bg-black text-white rounded-xl">Cetak</a>
+              <a href="" class="px-5 py-1 text-white bg-black rounded-xl">Cetak</a>
             </td>
           </tr>
           <tr>
@@ -111,7 +111,7 @@
             <td>$320,800</td>
             <td>
               <a href="" class="px-5 py-1 bg-[#15616D] rounded-xl text-white">Lihat</a>
-              <a href="" class="px-5 py-1 bg-black text-white rounded-xl">Cetak</a>
+              <a href="" class="px-5 py-1 text-white bg-black rounded-xl">Cetak</a>
             </td>
           </tr>
         </tbody>

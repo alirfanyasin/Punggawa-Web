@@ -42,7 +42,7 @@
       <div class="flex gap-4">
         <div class="w-8/12">
           <div class="mb-3">
-            <label for="name_competition" class="block mb-2">Name Competition</label>
+            <label for="name_competition" class="block mb-2">Nama Lomba</label>
             <input type="text" name="name" id="name_competition" class="w-full rounded-xl"
               value="{{ old('name') }}">
             @error('name')
@@ -52,7 +52,7 @@
             @enderror
           </div>
           <div class="mb-3">
-            <label for="description" class="block mb-2">Description</label>
+            <label for="description" class="block mb-2">Deskripsi</label>
             <textarea name="description" id="description" cols="30" rows="6" class="w-full rounded-xl">{{ old('description') }}</textarea>
             @error('description')
               <small class="text-red-700">
@@ -63,7 +63,7 @@
 
           <div class="grid grid-cols-2 gap-4 mb-3">
             <div>
-              <label for="start_date" class="block mb-2">Start Date</label>
+              <label for="start_date" class="block mb-2">Tanggal Mulai Lomba</label>
               <input type="date" id="start_date" name="start_date" class="w-full rounded-xl"
                 value="{{ old('start_date') }}">
               @error('start_date')
@@ -73,7 +73,8 @@
               @enderror
             </div>
             <div>
-              <label for="end_date" class="block mb-2">End Date <span class="italic">(optional)</span></label>
+              <label for="end_date" class="block mb-2">Tanggal Selesai Lomba <span
+                  class="italic">(optional)</span></label>
               <input type="date" id="end_date" name="end_date" class="w-full rounded-xl"
                 value="{{ old('end_date') }}">
             </div>
@@ -85,18 +86,32 @@
                 value="{{ old('guidebook_link') }}">
             </div>
             <div>
-              <label for="registration_link" class="block mb-2">Registration Link <span
-                  class="italic">(optional)</span></label>
+              <label for="registration_link" class="block mb-2">Link Pendaftaran</label>
               <input type="text" name="registration_link" id="registration_link" class="w-full rounded-xl"
                 value="{{ old('registration_link') }}">
+              @error('registration_link')
+                <small class="text-red-700">
+                  {{ $message }}
+                </small>
+              @enderror
             </div>
           </div>
-
           <div class="grid grid-cols-2 gap-4 mb-3">
             <div>
-              <label for="category" class="block mb-2">Category</label>
+              <label for="fund" class="block mb-2">Biaya Pendaftaran <span class="italic">(optional)</span></label>
+              <input type="number" name="fund" id="fund" class="w-full rounded-xl" value="{{ old('fund') }}">
+            </div>
+            <div>
+              <label for="registration_link" class="block mb-2">Nomor Rekening <span
+                  class="italic">(optional)</span></label>
+              <input type="number" name="no_rek" id="no_rek" class="w-full rounded-xl" value="{{ old('no_rek') }}">
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4 mb-3">
+            <div>
+              <label for="category" class="block mb-2">Kategori</label>
               <select name="category" id="category" class="rounded-xl">
-                <option selected disabled>-- Choose --</option>
+                <option selected disabled>-- Pilih --</option>
                 <option value="Programming">Programming</option>
                 <option value="Cyber Security">Cyber Security</option>
                 <option value="Data Mining">Data Mining</option>
@@ -109,6 +124,12 @@
                 <option value="ICT Bussiness Development">ICT Bussiness Development</option>
                 <option value="Game Development">Game Development</option>
               </select>
+              @error('category')
+                <small class="text-red-700">
+                  {{ $message }}
+                </small>
+              @enderror
+
             </div>
             <div>
               <label for="poster" class="block mb-2">Poster</label>

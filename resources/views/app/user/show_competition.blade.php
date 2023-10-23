@@ -46,6 +46,18 @@
           <h1 class="text-3xl font-semibold">{{ $data->name }}</h1>
         </div>
         <p class="my-5">{{ $data->description }}</p>
+
+        @if ($data->fund != null)
+          <div class="mb-7">
+            <h2 class="mb-2 text-2xl">Rp. {{ number_format($data->fund, 0, ',', '.') }}</h2>
+            <span>No. Rek ({{ substr($data->no_rek, 0, 8) . 'xxxxx' }})</span>
+          </div>
+        @else
+          <div class="mb-7">
+            <p class="inline py-1 text-xl bg-green-300 rounded-lg px-7">Gratis Biaya Pendaftaran</p>
+          </div>
+        @endif
+
         <div class="mb-5">
           <h4 class="text-lg font-semibold">Dimulai pada tanggal</h4>
           <p>{{ date('d F Y', strtotime($data->start_date)) }}</p>

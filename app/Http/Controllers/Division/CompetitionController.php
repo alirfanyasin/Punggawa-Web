@@ -54,7 +54,8 @@ class CompetitionController extends Controller
             'description' => 'required',
             'start_date' => 'required',
             'poster' => 'required|image|mimes:jpeg,png,jpg|max:2048',
-            'category' => 'required'
+            'category' => 'required',
+            'registration_link' => 'required'
         ];
 
         return $rules;
@@ -71,7 +72,8 @@ class CompetitionController extends Controller
         $validatedData['user_id'] = Auth::user()->id;
         $validatedData['end_date'] = $request->end_date;
         $validatedData['guidebook_link'] = $request->guidebook_link;
-        $validatedData['registration_link'] = $request->registration_link;
+        $validatedData['fund'] = $request->fund;
+        $validatedData['no_rek'] = $request->no_rek;
         $validatedData['status'] = 'Active';
 
         if ($request->hasFile('poster')) {
@@ -121,6 +123,8 @@ class CompetitionController extends Controller
         $validatedData['end_date'] = $request->end_date;
         $validatedData['guidebook_link'] = $request->guidebook_link;
         $validatedData['registration_link'] = $request->registration_link;
+        $validatedData['fund'] = $request->fund;
+        $validatedData['no_rek'] = $request->no_rek;
         $validatedData['category'] = $request->category;
         $validatedData['status'] = 'Active';
 
