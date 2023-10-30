@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('competition_id')->constrained();
-            $table->unsignedBigInteger('fund');
+            $table->unsignedBigInteger('fund')->nullable();
             $table->string('status')->nullable()->default('Proses');
             $table->timestamps();
         });

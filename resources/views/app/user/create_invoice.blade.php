@@ -61,7 +61,7 @@
         <label for="">Preview</label>
         <div class="w-full mt-2 overflow-hidden border rounded-xl">
           <header class="text-center bg-[#15616D] text-white py-3">
-            <h1 class="text-5xl font-semibold text-center pt-7">Invoice</h1>
+            <h1 class="mb-3 text-4xl font-semibold text-center pt-7">Pengajuan Biaya</h1>
             <p class="text-lg font-semibold">Punggawa <span class="text-yellow-400">Inspratif</span></p>
           </header>
           <div class="p-10">
