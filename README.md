@@ -53,6 +53,15 @@ php artisan serve
 
 npm run dev
 ```
+## Symblink Route
+```sh
+// Symblink
+Route::get('symblink', function () {
+  $targetFolder = base_path() . '/storage/app/public';
+  $linkFolder = $_SERVER['DOCUMENT_ROOT'] . '/storage';
+  symlink($targetFolder, $linkFolder);
+});
+```
 
 
 ## License
