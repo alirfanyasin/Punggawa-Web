@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class RequestForFund extends Model
 {
     use HasFactory;
+    protected $table = "invoice";
     protected $guarded = ['id'];
 }

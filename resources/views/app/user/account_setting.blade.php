@@ -40,10 +40,10 @@
         <h2 class="font-semibold lg:text-xl xs:text-md">Profile</h2>
         <div class="mx-auto rounded-full w-40 relative h-40 ring-4 ring-[#2C717C] p-1 mt-16">
           <img src="{{ asset('assets/image/photo-profile.jpg') }}" class="w-full h-full rounded-full" alt="">
-          <a href="#"
+          {{-- <a href="#"
             class="w-8 h-8 rounded-full flex justify-center items-center absolute bg-[#2C717C] right-0 bottom-4">
             <span class="text-3xl text-white">+</span>
-          </a>
+          </a> --}}
         </div>
 
         <div class="mb-20 lg:px-10 xs:px-2 mt-7">
@@ -136,6 +136,17 @@
                   </small>
                 @enderror
               </div>
+              <div class="mb-5 input-group">
+                <label for="" class="text-[#15616D]">KTM</label>
+                <input type="file" name="ktm"
+                  class="w-full border-none rounded-xl bg-[#E8E8E8] focus:ring-[#15616D]"
+                  value="{{ Auth::user()->ktm }}" accept="image/jpg, image/jpeg, image/png">
+                @error('ktm')
+                  <small class="text-red-700">
+                    {{ $message }}
+                  </small>
+                @enderror
+              </div>
             </div>
             <div class="">
               <div class="mb-5 input-group">
@@ -182,10 +193,21 @@
                   </small>
                 @enderror
               </div>
+              <div class="mb-5 input-group">
+                <label for="avatar" class="text-[#15616D]">Avatar</label>
+                <input type="file" name="avatar"
+                  class="w-full border-none rounded-xl bg-[#E8E8E8] focus:ring-[#15616D]"
+                  value="{{ Auth::user()->avatar }}" accept="image/jpg, image/jpeg, image/png">
+                @error('avatar')
+                  <small class="text-red-700">
+                    {{ $message }}
+                  </small>
+                @enderror
+              </div>
             </div>
           </div>
-          <div>
-            <div class="mb-14 input-group">
+          {{-- <div>
+            <div class="mb-5 input-group">
               <label for="" class="text-[#15616D]">KTM</label>
               <input type="file" name="ktm"
                 class="w-full border-none rounded-xl bg-[#E8E8E8] focus:ring-[#15616D]"
@@ -196,7 +218,7 @@
                 </small>
               @enderror
             </div>
-          </div>
+          </div> --}}
           <div class="flex justify-end mt-5">
             <a href="#"
               class=" text-[#15616D] outline hover:bg-[#15616D] hover:text-white outline-2 outline-[#15616D] rounded-xl px-5 py-2 mr-3">Forgot
