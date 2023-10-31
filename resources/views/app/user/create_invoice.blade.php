@@ -124,7 +124,7 @@
         url: "{{ route('invoice.selected', ':id') }}".replace(':id', selectedValue),
         type: 'GET',
         success: function(response) {
-          console.log('success');
+          console.log('success'); 
           $('.nama-lomba').text(response.dataSelected.name);
           $('.kategori-lomba').text(response.dataSelected.category);
           $('.biaya').text(response.dataSelected.fund);

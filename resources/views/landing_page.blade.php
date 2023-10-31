@@ -12,19 +12,19 @@
         <img src="/assets/image/bg-jumbotron-lp4.png " class="absolute w-full mt-5 waveMiddle" alt="">
         <img src="/assets/image/bg-jumbotron-lp3.png " class="absolute w-full mt-16 waveBottom" alt="">
       </div>
-      <div class="container flex items-center max-w-screen-xl mt-10">
-        <div class="w-6/12 tagline">
-          <h1 class="font-semibold text-white uppercase text-7xl">Punggawa
+      <div class="container md:flex items-center max-w-screen-xl mt-10 xs:px-6">
+        <div class="md:w-6/12 xs:w-full tagline xs:text-center md:text-left">
+          <h1 class="font-semibold text-white uppercase xs:mt-10 lg:text-7xl md:text-6xl xs:text-5xl xs:text-center md:text-left">Punggawa
             <br>
             <span class="text-[#FFB902]">Inspiratif</span>
           </h1>
-          <p class="mt-10 text-[#E9E9E9] text-xl">Pusat informasi dan pengelolaan lomba di bidang akademik dan
+          <p class="mt-10 text-[#E9E9E9] md:text-xl xs:text-md xs:text-center md:text-left">Pusat informasi dan pengelolaan lomba di bidang akademik dan
             non-akademik Institut Teknologi Telkom Surabaya</p>
 
           <a href="#" class="inline-block px-7 py-3 mt-10 rounded-lg bg-white text-[#15616D] shadow-lg">Lihat
             Lomba</a>
         </div>
-        <div class="w-6/12 mx-auto tagline">
+        <div class="md:w-6/12 xs:w-full mx-auto tagline xs:order-1 xs:mt-5">
           <img src="/assets/image/object-jp.png" class="w-full" alt="">
         </div>
       </div>
@@ -34,9 +34,9 @@
 
 
   <!-- About start -->
-  <section class="mt-32">
+  <section class="mt-32 xs:px-6 md:px-0">
     <header class="text-center">
-      <h2 class="text-4xl font-semibold text-[#3D4650]">Tentang Punggawa
+      <h2 class="md:text-4xl font-semibold text-[#3D4650] xs:text-2xl">Tentang Punggawa
         <span class="text-[#15616D]">Inspiratif</span>
       </h2>
     </header>
@@ -50,9 +50,9 @@
   <!-- About end -->
 
   <!-- Visi start -->
-  <section class="mt-32">
+  <section class="mt-32 xs:px-6 md:px-0">
     <header class="text-center">
-      <h2 class="text-4xl font-semibold text-[#3D4650]">Visi Punggawa
+      <h2 class="md:text-4xl xs:text-2xl font-semibold text-[#3D4650]">Visi Punggawa
         <span class="text-[#15616D]">Inspiratif</span>
       </h2>
     </header>
@@ -66,14 +66,14 @@
   <!-- Visi end -->
 
   <!-- Misi start -->
-  <section class="mt-10">
+  <section class="mt-10 xs:px-6 md:px-0">
     <header class="text-center">
-      <h2 class="text-4xl font-semibold text-[#3D4650]">Misi Punggawa
+      <h2 class="md:text-4xl xs:text-2xl font-semibold text-[#3D4650]">Misi Punggawa
         <span class="text-[#15616D]">Inspiratif</span>
       </h2>
     </header>
     <div class="box-border flex justify-center mt-10">
-      <div class="grid max-w-5xl grid-cols-3 gap-4">
+      <div class="grid max-w-5xl md:grid-cols-3 xs:grid-cols-1 gap-4">
         <div
           class="bg-[#F5F5F5] box-border p-5 rounded-xl hover:-translate-y-5 hover:-translate-x-5 hover:scale-110 hover:ease-out hover:duration-700">
           <div class="flex justify-center mt-6">
@@ -140,13 +140,13 @@
   <!-- Divisi start -->
   <section class="mt-32">
     <header class="text-center">
-      <div class="mb-3 text-2xl text-white">Division</div>
-      <h2 class="text-4xl font-semibold text-center text-white">Misi Punggawa
+      <div class="mb-3 md:text-2xl xs:text-lg md:text-white xs:text-black">Division</div>
+      <h2 class="md:text-4xl xs:text-2xl font-semibold text-center md:text-white xs:text-[#15616D]">Punggawa
         <span class="text-[#FFB902]">Inspiratif</span>
       </h2>
     </header>
     <div class="max-w-screen-xl mx-auto mt-10">
-      <div class="grid grid-cols-4 gap-4">
+      <div class="grid md:grid-cols-4 xs:grid-cols-1 gap-4 xs:px-6 md:p-0">
         <div class="bg-[#F5F5F5] box-border p-5 rounded-xl shadow-xl">
           <div class="flex justify-center mt-6">
             <img src="./assets/image/icon/icon-7.png" class="w-20 h-20" alt="">
@@ -193,14 +193,14 @@
   <!-- Kilas start -->
   <section class="mt-32">
     <header class="text-center">
-      <div class="mb-3 text-2xl">Kilas</div>
-      <h2 class="text-4xl font-semibold text-center">Pemaparan
+      <div class="mb-3 md:text-2xl xs:text-lg">Kilas</div>
+      <h2 class="md:text-4xl xs:text-2xl font-semibold text-center">Pemaparan
         <span class="text-[#15616D]">Juara</span>
       </h2>
     </header>
 
-    <div class="max-w-screen-xl mx-auto mt-10">
-      <div class="grid grid-cols-3 gap-10">
+    <div class="max-w-screen-xl mx-auto mt-10 xs:px-6">
+      <div class="grid md:grid-cols-3  sm:grid-cols-2 xs:grid-cols-1 gap-10">
         <div class="rounded-xl">
           <div class="relative">
             <img src="/assets/image/card-1.png" class="w-full" alt="">
@@ -253,7 +253,7 @@
 
 
   <!-- FAQ start -->
-  <section class="h-screen mt-52" id="faq-section">
+  <section class="h-screen mt-52 xs:px-6 md:px-0" id="faq-section">
     <div class="max-w-screen-xl pt-40 mx-auto">
       <header class="flex items-center justify-start">
         <img src="/assets/image/icon/icon-chat.png" class="w-9 h-9" alt="">

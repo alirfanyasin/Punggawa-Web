@@ -8,6 +8,7 @@
 #faq-section {
   background: url('../image/bg3-jumbotron-lp.png') no-repeat top;
   background-size: cover;
+  height: 1100px;
 }
 
 @keyframes move_wave {

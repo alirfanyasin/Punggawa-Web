@@ -1,13 +1,13 @@
 {{-- Footer start --}}
 <footer class="w-full py-10 bg-[#2C717C]">
-  <div class="max-w-screen-xl mx-auto">
-    <div class="grid grid-cols-3 gap-4">
+  <div class="max-w-screen-xl mx-auto md:px-0 xs:px-6">
+    <div class="grid md:grid-cols-3 xs:grid-cols-1 gap-4">
       <div>
         <img src="{{ asset('assets/image/logo/Logo_Institut_Teknologi_Telkom_Surabaya_white.svg') }}" alt="">
         <h2 class="my-5 text-4xl font-semibold text-white">Punggawa <span class="text-[#FFB902]">Inspiratif</span></h2>
-        <p class="text-white">Pusat informasi dan pengelolaan lomba di bidang akademik dan non-akademik
+        <p class="text-white xs:text-sm md:text-md">Pusat informasi dan pengelolaan lomba di bidang akademik dan non-akademik
           Institut Teknologi Telkom Surabaya</p>
-        <div class="flex gap-4 mt-5 social-media">
+        <div class="flex gap-4 mt-5 social-media xs:hidden md:block">
           <a href="">
             <div class="flex items-center justify-center w-10 h-10 bg-white rounded-full facebook">
               <img src="{{ asset('assets/image/icon/facebook.png') }}" alt="">
@@ -26,10 +26,10 @@
         </div>
       </div>
 
-      <div class="flex justify-center">
+      <div class="md:flex md:justify-center xs:my-10 md:my-0">
         <div>
-          <h3 class="text-3xl font-semibold text-white">Fitur</h3>
-          <ul class="mt-3 text-white">
+          <h3 class="md:text-3xl xs:text-xl font-semibold text-white">Fitur</h3>
+          <ul class="mt-3 text-white xs:text-sm md:text-md">
             <li><a href="">Beranda</a></li>
             <li><a href="">Divisi</a></li>
             <li><a href="">Pusat Informasi</a></li>
@@ -39,15 +39,15 @@
       </div>
 
       <div>
-        <h3 class="text-3xl font-semibold text-white">Hubungi Kami</h3>
+        <h3 class="md:text-3xl xs:text-xl font-semibold text-white">Hubungi Kami</h3>
         <div class="flex mt-5">
           <img src="{{ asset('assets/image/icon/location.png') }}" class="w-10 h-10" alt="">
-          <p class="ml-5 text-white">Jl. Ketintang No.156, Gayungan, Surabaya,
+          <p class="ml-5 text-white xs:text-sm md:text-md">Jl. Ketintang No.156, Gayungan, Surabaya,
             Jawa Timur 60231</p>
         </div>
         <div class="flex mt-5">
           <img src="{{ asset('assets/image/icon/email.png') }}" class="w-10 h-10" alt="">
-          <p class="ml-5 text-white">punggawainspiratif@gmail.com</p>
+          <p class="ml-5 text-white xs:text-sm md:text-md">punggawainspiratif@gmail.com</p>
         </div>
         <div class="flex mt-5">
           <div class="relative flex items-center w-full">
@@ -67,7 +67,7 @@
     <hr class="mt-10 border border-slate-400">
 
     <div class="mt-5 text-center">
-      <p class="text-white">Copyright &copy; {{ date('Y') }} Punggawa Inspiratif | All Rights Reserved </p>
+      <p class="text-white xs:text-xs md:text-md">Copyright &copy; {{ date('Y') }} Punggawa Inspiratif | All Rights Reserved </p>
     </div>
 
 
