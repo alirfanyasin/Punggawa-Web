@@ -28,6 +28,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Symblink
+Route::get('symblink', function () {
+  $targetFolder = base_path() . '/storage/app/public';
+  $linkFolder = $_SERVER['DOCUMENT_ROOT'] . '/storage';
+  symlink($targetFolder, $linkFolder);
+});
+
 
 
 Route::get('/', [LandingPageController::class, 'index']);
